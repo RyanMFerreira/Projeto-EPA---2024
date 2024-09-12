@@ -1,4 +1,8 @@
 /* Esse é o estilo da página inicial */
+.main{
+    height: 85vh;
+}
+
 .side {
     width: 50%;
     height: 85vh;
