@@ -25,17 +25,23 @@ th.topLeftBorder {
 
 td.bottomRightBorder {
     border-bottom-right-radius: var(--ui-border);
+    padding: 16px;
+}
+
+.color {
+    background: var(--nav-color);
 }
 
 td.bottomLeftBorder {
     border-bottom-left-radius: var(--ui-border);
+    padding: 16px;
 }
 
 th {
     background: var(--nav-color);
 }
 
-tr{
+tr {
     background-color: rgb(48, 48, 48);
 }
 
@@ -47,6 +53,6 @@ tr:hover {
     background-color: var(--main-hover-color);
 }
 
-h2{
+h2 {
     margin-bottom: 2.5%;
 }

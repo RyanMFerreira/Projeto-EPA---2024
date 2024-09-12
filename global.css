@@ -8,8 +8,8 @@ Assim, fica mais fácil de organizar e reutilizar códigos */
     --div-color: #373737;
     --nav-color: #0F0F0F;
     --navbar-hover-color: #a0a0a0;
-    --button-border: 12px;
-    --ui-border: 24px;
+    --button-border: 8px;
+    --ui-border: 16px;
 }
 
 * {
@@ -59,6 +59,21 @@ footer {
     background-color: var(--nav-color);
     padding: 2.5%;
     margin-top: auto;
+}
+
+input{
+    padding: 4px;
+    border-radius: var(--button-border);
+    border: 2px solid var(--main-color);
+}
+
+.footerInline {
+    display: flex;
+    padding: 0;
+}
+
+.footerDiv {
+    margin-right: 2.5%;
 }
 
 ::-webkit-scrollbar {
