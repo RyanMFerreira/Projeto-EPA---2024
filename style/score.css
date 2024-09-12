@@ -1,0 +1,52 @@
+.main {
+    padding: 2.5%;
+    height: auto;
+    overflow: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 16px;
+}
+
+th.topRightBorder {
+    border-top-right-radius: var(--ui-border);
+}
+
+th.topLeftBorder {
+    border-top-left-radius: var(--ui-border);
+}
+
+td.bottomRightBorder {
+    border-bottom-right-radius: var(--ui-border);
+}
+
+td.bottomLeftBorder {
+    border-bottom-left-radius: var(--ui-border);
+}
+
+th {
+    background: var(--nav-color);
+}
+
+tr{
+    background-color: rgb(48, 48, 48);
+}
+
+tr:nth-child(even) {
+    background-color: var(--background-color);
+}
+
+tr:hover {
+    background-color: var(--main-hover-color);
+}
+
+h2{
+    margin-bottom: 2.5%;
+}

@@ -31,5 +31,5 @@
 }
 
 .navBar li a:hover {
-    background-color: var(--navbar-hover-color);
+    background: var(--main-hover-color);
 }

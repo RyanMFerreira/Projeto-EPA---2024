@@ -3,10 +3,13 @@ Assim, fica mais fácil de organizar e reutilizar códigos */
 
 :root {
     --main-color: #E07614;
+    --main-hover-color: #572c04;
     --background-color: #202020;
     --div-color: #373737;
     --nav-color: #0F0F0F;
     --navbar-hover-color: #a0a0a0;
+    --button-border: 8px;
+    --ui-border: 16px;
 }
 
 * {
@@ -24,7 +27,7 @@ body {
 
 div.main {
     background-color: var(--div-color);
-    border-radius: 16px;
+    border-radius: var(--ui-border);
     margin: 5vh auto;
     width: 92.5vw;
 }
@@ -32,7 +35,7 @@ div.main {
 button {
     background-color: var(--main-color);
     border: none;
-    border-radius: 8px;
+    border-radius: var(--button-border);
 }
 
 a button {
@@ -49,4 +52,21 @@ a button {
 footer {
     background-color: var(--nav-color);
     padding: 2.5%;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: var(--button-border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--main-hover-color);
 }

@@ -1,5 +1,5 @@
 /* Esse é o estilo da página inicial */
-.main{
+.main {
     height: 85vh;
 }
 
@@ -11,7 +11,7 @@
 
 a.side {
     color: white;
-    padding: 16px;
+    padding: var(--ui-border);
     text-decoration: none;
     display: block;
 }
@@ -23,7 +23,7 @@ a.side {
 }
 
 button {
-    width: 256px;
+    width: auto;
     height: 64px;
 }
 
@@ -33,7 +33,7 @@ button.start {
 }
 
 .start:hover {
-    opacity: 60%;
+    background: var(--main-hover-color);
 }
 
 h1.title {
@@ -48,5 +48,5 @@ div.mainImage {
     background-color: var(--navbar-hover-color);
     width: 70%;
     height: 70%;
-    border-radius: 16px;
+    border-radius: var(--ui-border);
 }

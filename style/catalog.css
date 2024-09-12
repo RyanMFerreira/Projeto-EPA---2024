@@ -3,6 +3,7 @@
 .main {
     padding: 2.5%;
     height: auto;
+        overflow: auto;
 }
 
 .inline {
@@ -17,7 +18,7 @@
     transition: 0.3s;
     width: -moz-fit-content;
     width: fit-content;
-    border-radius: 8px;
+    border-radius: var(--button-border);
     margin-top: 2.5%;
 }
 
@@ -28,10 +29,13 @@
 
 .container {
     padding: 16px;
+    background-color: var(--nav-color);
+    border-radius: 0 0 var(--button-border) var(--button-border);
+
 }
 
 .temp {
-    border-radius: 8px 8px 0 0;
+    border-radius: var(--button-border) var(--button-border) 0 0;
     background-color: white;
     width: 256px;
     height: 256px;
