@@ -1,0 +1,35 @@
+/* Estilo da barra de navegação*/
+
+.navBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--nav-color);
+}
+
+.navBar li {
+    float: left;
+}
+
+.navBar li.right {
+    float: right;
+}
+
+.navBar li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    width: 96px;
+}
+
+.navBar li a.logoText {
+    font-weight: bold;
+    width: 200px;
+}
+
+.navBar li a:hover {
+    background-color: var(--navbar-hover-color);
+}

@@ -1,0 +1,53 @@
+/* Esse arquivo é onde vai o estilo que estará presente em todas as páginas do projeto.
+Assim, fica mais fácil de organizar e reutilizar códigos */
+
+:root {
+    --main-color: #E07614;
+    --background-color: #202020;
+    --div-color: #373737;
+    --nav-color: #0F0F0F;
+    --navbar-hover-color: #a0a0a0;
+}
+
+* {
+    color: white;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: 5ms;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+
+div.main {
+    background-color: var(--div-color);
+    border-radius: 16px;
+    margin: 5vh auto;
+    width: 92.5vw;
+    height: 85vh;
+}
+
+button {
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 8px;
+}
+
+a button {
+    text-decoration: none;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.active {
+    background-color: var(--main-color);
+    font-weight: bold;
+}
+
+footer {
+    background-color: var(--nav-color);
+    padding: 2.5%;
+}

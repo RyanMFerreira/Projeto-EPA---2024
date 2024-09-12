@@ -1,0 +1,48 @@
+/* Esse é o estilo da página inicial */
+.side {
+    width: 50%;
+    height: 85vh;
+    float: right;
+}
+
+a.side {
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.content {
+    padding: 2.5%;
+    float: left;
+    width: 50%;
+}
+
+button {
+    width: 256px;
+    height: 64px;
+}
+
+button.start {
+    margin-top: 15%;
+    width: 50%;
+}
+
+.start:hover {
+    opacity: 60%;
+}
+
+h1.title {
+    margin-top: 15%;
+}
+
+div.mainImage {
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--navbar-hover-color);
+    width: 70%;
+    height: 70%;
+    border-radius: 16px;
+}
