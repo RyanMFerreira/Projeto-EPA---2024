@@ -2,7 +2,7 @@
 
 function toggleMenu() {
     var menu = document.querySelector('.sidepanel');
-    var size = '350px';
+    var size = '25%';
 
     menu.style.width = menu.style.width === size ? '0' : size;
 }

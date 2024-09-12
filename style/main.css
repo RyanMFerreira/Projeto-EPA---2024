@@ -20,14 +20,12 @@ a.side {
     padding: 2.5%;
     float: left;
     width: 50%;
-}
-
-button {
-    width: auto;
-    height: 64px;
+    min-height: 100%;
 }
 
 button.start {
+    width: auto;
+    height: 64px;
     margin-top: 15%;
     width: 50%;
 }

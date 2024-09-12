@@ -3,13 +3,12 @@
 .main {
     padding: 2.5%;
     height: auto;
-        overflow: auto;
+    overflow-x: auto;
 }
 
 .inline {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
     padding: 0;
 }
 
@@ -20,6 +19,7 @@
     width: fit-content;
     border-radius: var(--button-border);
     margin-top: 2.5%;
+    margin-right: 50px;
 }
 
 .card:hover {
