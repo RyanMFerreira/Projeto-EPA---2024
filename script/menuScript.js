@@ -2,7 +2,9 @@
 
 function toggleMenu() {
     var menu = document.querySelector('.sidepanel');
-    menu.style.width = menu.style.width === '350px' ? '0' : '350px';
+    var size = '350px';
+
+    menu.style.width = menu.style.width === size ? '0' : size;
 }
 
 var isActive = false;
