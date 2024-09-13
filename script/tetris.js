@@ -176,18 +176,17 @@
     function gameOver() {
         clearInterval(gameLoop);
 
-        var gameOver = document.getElementById('game_over');
-        gameOver.style.display = 'block';
-
         var restartGameButton = document.getElementById('restart_game');
         restartGameButton.style.display = 'block';
 
-        document.getElementById('game_over').textContent = "Game Over";
         document.getElementById("start_game").disabled = true;
         document.getElementById("restart_game").disabled = false;
+        openModal();
     }
 
     function restartGame() {
+        closeModal();
+
         var tetrisElement = document.getElementById('tetris');
         tetrisElement.style.display = 'block';
 
@@ -200,7 +199,7 @@
         area = makeMatrix(10, 20);
         player = {
             matrix: makePiece("t"),
-            pos: { x: 0, y: 0 },
+            pos: { x: 3, y: 0 },
             score: 0
         };
         time = 0;
@@ -251,7 +250,6 @@
         }
     });
 
-
     setInterval(() => {
         if (gameRun) {
             increaseSpeed();
@@ -259,19 +257,18 @@
     }, 1000);
 })();
 
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function () {
-    modal.style.display = "block";
-}
-
-span.onclick = function () {
-    modal.style.display = "none";
-}
-
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        event.preventDefault();
     }
+});
+
+var popUp = document.getElementById("myModal");
+
+function openModal() {
+    popUp.style.display = "block";
+}
+
+function closeModal() {
+    popUp.style.display = "none";
 }

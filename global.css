@@ -72,9 +72,6 @@ input {
     padding: 5px 10px;
     border-radius: var(--button-border);
     border: 2px solid black;
-}
-
-input::placeholder{
     color: black;
 }
 

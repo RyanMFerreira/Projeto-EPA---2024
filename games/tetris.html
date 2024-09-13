@@ -36,31 +36,46 @@
 
 
     <div class="main" id="game_container">
-        <canvas id="tetris" width="200" height="400"></canvas>
-        <div id="score">Score: 0</div>
+        <div class="center">
+            <div id="score">Score: 0</div>
+            <canvas id="tetris" width="200" height="400"></canvas>
+        </div>
         <div id="game_controls">
             <button id="start_game">Iniciar Jogo</button>
         </div>
-        <div id="game_over"></div>
-
-        <button id="myBtn">Open Modal</button>
 
         <div id="myModal" class="popUp">
             <div class="popUp-content">
                 <div class="popUp-header">
-                    <span class="close">&times;</span>
                     <h2>Game Over!</h2>
                 </div>
                 <div class="popUp-body">
                     <div>
                         <label for="name">Insira seu nome:</label><br>
-                        <input type="text" name="name" id="name">
+                        <input class="input" type="text" name="name" id="name">
                     </div>
                 </div>
                 <div class="popUp-footer">
                     <button class="send" id="restart_game" disabled>Enviar</button>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="tLeft">
+            <h3>Como jogar?</h3>
+            <ul>
+                <li>Utilize as setas esquerda/direita para mover.</li>
+                <li>Seta para cima para rotacionar a peça.</li>
+                <li>Seta para baixo para aumentar a velocidade de caída.</li>
+            </ul>
+        </div>
+        <div class="tRight">
+            <h3>Créditos:</h3>
+            <ul>
+                <li>Feito por Murilo Andrade.</li>
+                <li>Aprimorado por Ryan Ferreira.</li>
+            </ul>
         </div>
     </div>
     <script src="../script/tetris.js"></script>

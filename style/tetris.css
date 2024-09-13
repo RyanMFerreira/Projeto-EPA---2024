@@ -1,15 +1,6 @@
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
 #game_container {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 #tetris {
@@ -19,15 +10,22 @@ html {
     background-color: #000;
 }
 
-button {
-    background-color: var(--main-color);
-    border: none;
-    color: white;
-    text-decoration: none;
+.center{
+    margin: auto;
+}
+
+.start {
+    font-weight: bold;
+    width: 256px;
+    height: 64px;
 }
 
 .send {
-    width: 50%;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
 }
 
 button:hover {
@@ -40,9 +38,13 @@ button:disabled {
 }
 
 #score {
-    font-size: 24px;
-    margin: 10px;
+    margin-left: 15px;
+    background-color: var(--nav-color);
+    border-radius: var(--ui-border);
+    float: right;
+    font-size: larger;
     display: none;
+    padding: 8px;
 }
 
 #game_over {
@@ -71,7 +73,8 @@ button:disabled {
     border-radius: var(--ui-border);
     margin: auto;
     padding: 32px;
-    width: 30%;
+    width: 25vw;
+    height: 33vh;
     background-color: white;
 }
 
@@ -105,4 +108,14 @@ button:disabled {
 .popUp label,
 .popUp p {
     color: black;
+}
+
+.tRight {
+    float: right;
+    width: 50%;
+}
+
+.tLeft {
+    float: left;
+    width: 50%;
 }
