@@ -100,3 +100,34 @@ input {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--main-hover-color);
 }
+
+.tRight {
+    float: right;
+    width: 50%;
+}
+
+.tLeft {
+    float: left;
+    width: 50%;
+}
+
+.center {
+    margin: auto;
+}
+
+.start {
+    float: left;
+    font-weight: bold;
+    font-size: larger;
+    width: 256px;
+    height: 64px;
+    padding: 16px;
+}
+
+.send {
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+}

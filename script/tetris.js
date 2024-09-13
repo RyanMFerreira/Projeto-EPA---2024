@@ -181,11 +181,11 @@
 
         document.getElementById("start_game").disabled = true;
         document.getElementById("restart_game").disabled = false;
-        openModal();
+        openPopUp();
     }
 
     function restartGame() {
-        closeModal();
+        closePopUp();
 
         var tetrisElement = document.getElementById('tetris');
         tetrisElement.style.display = 'block';
@@ -257,18 +257,12 @@
     }, 1000);
 })();
 
-document.addEventListener('keydown', function (event) {
-    if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-        event.preventDefault();
-    }
-});
-
 var popUp = document.getElementById("myModal");
 
-function openModal() {
+function openPopUp() {
     popUp.style.display = "block";
 }
 
-function closeModal() {
+function closePopUp() {
     popUp.style.display = "none";
 }

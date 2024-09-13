@@ -1,0 +1,10 @@
+#board {
+    display: none;
+    border-radius: var(--ui-border);
+    margin: auto;
+    background-image: url("./../assets/flappyBirdAssets/flappybirdbg.png");
+}
+
+.center {
+    text-align: center;
+}
