@@ -8,8 +8,8 @@ Assim, fica mais fácil de organizar e reutilizar códigos */
     --div-color: #373737;
     --nav-color: #0F0F0F;
     --navbar-hover-color: #a0a0a0;
-    --button-border: 8px;
-    --ui-border: 16px;
+    --button-border: 4px;
+    --ui-border: 8px;
 }
 
 * {
@@ -40,8 +40,15 @@ div.main {
 
 button {
     background-color: var(--main-color);
-    border: none;
     border-radius: var(--button-border);
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+button:hover {
+    transform: scale(1.05);
+
 }
 
 a button {
@@ -61,10 +68,14 @@ footer {
     margin-top: auto;
 }
 
-input{
-    padding: 4px;
+input {
+    padding: 5px 10px;
     border-radius: var(--button-border);
-    border: 2px solid var(--main-color);
+    border: 2px solid black;
+}
+
+input::placeholder{
+    color: black;
 }
 
 .footerInline {

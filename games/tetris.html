@@ -45,20 +45,20 @@
 
         <button id="myBtn">Open Modal</button>
 
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
+        <div id="myModal" class="popUp">
+            <div class="popUp-content">
+                <div class="popUp-header">
                     <span class="close">&times;</span>
                     <h2>Game Over!</h2>
                 </div>
-                <div class="modal-body">
-                    <div class="inline">
-                        <h3>Insira seu nome:</h3>
-                        <input type="text" value="">
+                <div class="popUp-body">
+                    <div>
+                        <label for="name">Insira seu nome:</label><br>
+                        <input type="text" name="name" id="name">
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button id="restart_game" disabled>Enviar</button>
+                <div class="popUp-footer">
+                    <button class="send" id="restart_game" disabled>Enviar</button>
                 </div>
             </div>
         </div>
