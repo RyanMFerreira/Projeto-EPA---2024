@@ -17,7 +17,7 @@ Assim, fica mais fácil de organizar e reutilizar códigos */
     margin: 0;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    transition: 5ms;
+    transition: 10ms;
 }
 
 html {
@@ -78,6 +78,7 @@ input {
 .footerInline {
     display: flex;
     padding: 0;
+    justify-content: end;
 }
 
 .footerDiv {

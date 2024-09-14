@@ -2,12 +2,16 @@
     padding: 2.5%;
     height: auto;
     overflow: auto;
+    margin: 0;
+
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
 }
+
+/* box-sizing: border-box; */
 
 th,
 td {
@@ -55,4 +59,21 @@ tr:hover {
 
 h2 {
     margin-bottom: 2.5%;
+}
+
+.tabs {
+    margin: 0;
+}
+
+.tab-link {
+    background-color: var(--nav-color);
+    padding: 12px 48px;
+    cursor: pointer;
+    border-radius: var(--ui-border) var(--ui-border) 0 0;
+}
+
+
+.tab-content {
+    margin: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
