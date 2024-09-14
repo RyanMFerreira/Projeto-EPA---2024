@@ -26,8 +26,8 @@
     <ul class="navBar">
         <li><a class="logoText" href="#">Projeto EPA 2024</a></li>
         <li class="active"><a href="#">Início</a></li>
-        <li><a href="catalog.html">Catálogo</a></li>
-        <li><a href="score.html">Placar</a></li>
+        <li><a href="catalog.php">Catálogo</a></li>
+        <li><a href="score.php">Placar</a></li>
         <li class="right">
             <a class="openbtn" onclick="toggleMenu()" href="#">Menu</a>
         </li>
@@ -36,7 +36,7 @@
     <div class="main">
         <div class="content">
             <h1 class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
-            <a href="catalog.html"><button class="start">Começar a jogar!</button></a>
+            <a href="catalog.php"><button class="start">Começar a jogar!</button></a>
         </div>
 
         <div class="side">

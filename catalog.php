@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -25,9 +25,9 @@
 
     <ul class="navBar">
         <li><a class="logoText" href="#">Projeto EPA 2024</a></li>
-        <li><a href="index.html">Início</a></li>
+        <li><a href="index.php">Início</a></li>
         <li class="active"><a href="#">Catálogo</a></li>
-        <li><a href="score.html">Placar</a></li>
+        <li><a href="score.php">Placar</a></li>
         <li class="right">
             <a class="openbtn" onclick="toggleMenu()" href="#">Menu</a>
         </li>
@@ -37,7 +37,7 @@
         <h2>Catálogo:</h2>
         <div class="inline">
             <div class="card">
-                <a href="games/tetris.html">
+                <a href="games/tetris.php">
                     <div class="temp"></div>
                     <div class="container">
                         <h4><b>Tetris</b></h4>
@@ -46,7 +46,7 @@
                 </a>
             </div>
             <div class="card">
-                <a href="games/flappybird.html">
+                <a href="games/flappybird.php">
                     <div class="temp"></div>
                     <div class="container">
                         <h4><b>Flappy Bird</b></h4>
@@ -55,7 +55,7 @@
                 </a>
             </div>
             <div class="card">
-                <a href="games/snake.html">
+                <a href="games/snake.php">
                     <div class="temp"></div>
                     <div class="container">
                         <h4><b>Snake</b></h4>
@@ -64,7 +64,7 @@
                 </a>
             </div>
             <div class="card">
-                <a href="naoSeiSeChamarOMatheusFoiRealmenteUmaBoaIdeia/forca.html">
+                <a href="naoSeiSeChamarOMatheusFoiRealmenteUmaBoaIdeia/forca.php">
                     <div class="temp"></div>
                     <div class="container">
                         <h4><b>Forca</b></h4>
@@ -104,4 +104,4 @@
     </footer>
 </body>
 
-</html>
+</php>
