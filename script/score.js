@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     $('.tab-content').hide();
 
-    $('#' + tabId).fadeIn();
+    $('#' + tabId).slideDown();
 
     $('.tab-link').removeClass('active');
     $(this).addClass('active');
