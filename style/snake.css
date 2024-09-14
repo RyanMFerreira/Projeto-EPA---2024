@@ -1,7 +1,9 @@
-body{
+body {
     text-align: center;
+    text-align: left;
 }
 
-#board{
-    
+#board {
+    border-radius: var(--ui-border);
+    margin: auto;
 }

@@ -36,7 +36,8 @@
     padding: 16px;
     background-color: var(--nav-color);
     border-radius: 0 0 var(--button-border) var(--button-border);
-
+    height: 25%;
+    word-wrap: normal;
 }
 
 .temp {
