@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE p>
+<p lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -28,15 +28,15 @@
 
     <ul class="navBar">
         <li><a class="logoText" href="#">Projeto EPA 2024</a></li>
-        <li><a href="../index.html">Início</a></li>
-        <li><a href="../catalog.html">Catálogo</a></li>
-        <li><a href="../score.html">Placar</a></li>
+        <li><a href="../index.php">Início</a></li>
+        <li><a href="../catalog.php">Catálogo</a></li>
+        <li><a href="../score.php">Placar</a></li>
         <li class="right">
             <a class="openbtn" onclick="toggleMenu()" href="#">Menu</a>
         </li>
     </ul>
 
-    <a class="backA" href="../catalog.html">Voltar ao catálogo</a>
+    <a class="backA" href="../catalog.ph">Voltar ao catálogo</a>
     <div class="main" id="game_container">
         <div class="center">
             <div id="score">Score: 0</div>
@@ -103,4 +103,4 @@
     </footer>
 </body>
 
-</html>
+</p>

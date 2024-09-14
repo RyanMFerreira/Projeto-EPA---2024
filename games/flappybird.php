@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE php>
+<php lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake</title>
+    <meta name="viewport" , content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bard</title>
 
     <link rel="stylesheet" href="../style/catalog.css">
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="../style/navBar.css">
     <link rel="stylesheet" href="../style/sideMenu.css">
     <link rel="stylesheet" href="../style/gameOverPopUp.css">
+    <link rel="stylesheet" href="../style/flappybird.css">
 
     <script src="../script.js"></script>
     <script src="../script/menuScript.js"></script>
-
-
-    <link rel="stylesheet" href="../style/snake.css">
-    <script src="../script/snake.js"></script>
+    <script src="../script/flappybird.js"></script>
 </head>
 
 <body>
@@ -30,25 +28,23 @@
 
     <ul class="navBar">
         <li><a class="logoText" href="#">Projeto EPA 2024</a></li>
-        <li><a href="../index.html">Início</a></li>
-        <li><a href="../catalog.html">Catálogo</a></li>
-        <li><a href="../score.html">Placar</a></li>
+        <li><a href="../index.php">Início</a></li>
+        <li><a href="../catalog.php">Catálogo</a></li>
+        <li><a href="../score.php">Placar</a></li>
         <li class="right">
             <a class="openbtn" onclick="toggleMenu()" href="#">Menu</a>
         </li>
     </ul>
 
-    <a class="backA" href="../catalog.html">Voltar ao catálogo</a>
-    <div class="main" id="game_container">
-        <div class="center">
-            <h2 id="score">Pontuação:</h2>
-            <canvas id="board"></canvas>
-        </div>
+    <a class="backA" href="../catalog.php">Voltar ao catálogo</a>
+
+    <div class="main center" id="game_container">
+        <canvas id="board"></canvas>
         <div id="game_controls">
-            <button id="start_game">Iniciar Jogo</button>
+            <button onclick="startGame()" id="start_game">Iniciar Jogo</button>
         </div>
 
-        <div id="myModal" class="popUp">
+        <div id="gameOverPopUp" class="popUp">
             <div class="popUp-content">
                 <div class="popUp-header">
                     <h2>Game Over!</h2>
@@ -60,26 +56,27 @@
                     </div>
                 </div>
                 <div class="popUp-footer">
-                    <button class="send" id="restart_game" disabled>Enviar</button>
+                    <button class="send" onclick="closePopUp()">Enviar</button>
                 </div>
             </div>
         </div>
+
     </div>
     <div class="main">
         <div class="tLeft">
             <h3>Como jogar?</h3>
             <ul>
-                <li>Utilize as setas para se mover pelas quatro direções.</li>
+                <li>Utilize a seta para cima ou espaço para subir.</li>
             </ul>
         </div>
         <div class="tRight">
             <h3>Créditos:</h3>
             <ul>
-                <li>Feito por Ryan Ferreira.</li>
+                <li>Feito por Arthur Martin.</li>
+                <li>Aprimorado por Ryan Ferreira.</li>
             </ul>
         </div>
     </div>
-    <script src="../script/tetris.js"></script>
 
     <footer class="footer">
         <div class="footerInline">
@@ -102,4 +99,4 @@
     </footer>
 </body>
 
-</html>
+</php>

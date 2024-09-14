@@ -27,8 +27,8 @@
 
     <ul class="navBar">
         <li><a class="logoText" href="#">Projeto EPA 2024</a></li>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="catalog.html">Catálogo</a></li>
+        <li><a href="index.php">Início</a></li>
+        <li><a href="catalog.php">Catálogo</a></li>
         <li class="active"><a href="#">Placar</a></li>
         <li class="right">
             <a class="openbtn" onclick="toggleMenu()" href="#">Menu</a>
@@ -201,4 +201,4 @@
     </footer>
 </body>
 
-</html>
+</>
