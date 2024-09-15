@@ -106,9 +106,9 @@
 </body>
 
 <?php
-if (filter_input(INPUT_POST, 'restart_game')) {
-    $nome = filter_input(INPUT_POST, 'name');
-    $pontucacao = filter_input(INPUT_POST, 'scoreInput');
+if (filter_input(type: INPUT_POST, var_name: 'restart_game')) {
+    $nome = filter_input(type: INPUT_POST, var_name: 'name');
+    $pontucacao = filter_input(type: INPUT_POST, var_name: 'scoreInput');
 
     $dados = array(
         'name' => $nome,
@@ -118,7 +118,7 @@ if (filter_input(INPUT_POST, 'restart_game')) {
     include_once '../class/snakeScore.php';
     $snake = new Snake();
 
-    $snake->setJsonDados(json_encode($dados));
+    $snake->setJsonDados(jsonDados: json_encode(value: $dados));
 
     $msg = $snake->salvar() === true ? "Erro" : "Dados salvo";
 

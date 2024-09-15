@@ -14,16 +14,16 @@ class Snake
         $this->jsonDados = $jsonDados;
     }
 
-    public function salvar()
+    public function salvar(): bool|string
     {
-        $caminho = curl_init($this->url . 'snake.json');
+        $caminho = curl_init(url: $this->url . 'snake.json');
 
-        curl_setopt($caminho, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($caminho, CURLOPT_POSTFIELDS, $this->jsonDados);
-        curl_setopt($caminho, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt(handle: $caminho, option: CURLOPT_CUSTOMREQUEST, value: "POST");
+        curl_setopt(handle: $caminho, option: CURLOPT_POSTFIELDS, value: $this->jsonDados);
+        curl_setopt(handle: $caminho, option: CURLOPT_RETURNTRANSFER, value: true);
 
-        $resposta = curl_exec($caminho);
-        curl_close($caminho);
+        $resposta = curl_exec(handle: $caminho);
+        curl_close(handle: $caminho);
 
         return $resposta;
     }
