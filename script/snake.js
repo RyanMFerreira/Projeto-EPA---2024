@@ -31,8 +31,8 @@ function start() {
     var startGameButton = document.getElementById('start_game');
     startGameButton.style.display = 'none';
 
-    var scoreH2 = document.getElementById('score');
-    scoreH2.style.display = 'block';
+    var showScore = document.getElementById('score');
+    showScore.style.display = 'block';
 
     var gameBoard = document.getElementById('board');
     gameBoard.style.display = 'block';
@@ -146,7 +146,7 @@ function placeFood() {
 }
 
 function updateScore() {
-    document.getElementById('score').textContent = "Pontuação: " + score;
+    document.getElementById('score').textContent = score;
 }
 
 function openPopUp() {

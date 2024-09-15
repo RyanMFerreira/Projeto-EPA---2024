@@ -39,7 +39,7 @@
     <a class="backA" href="../catalog.php">Voltar ao catálogo</a>
     <div class="main" id="game_container">
         <div class="center">
-            <h2 id="score">Pontuação:</h2>
+            <h2 name="score" id="score">Pontuação:</h2>
             <canvas id="board"></canvas>
         </div>
         <div id="game_controls">
@@ -53,12 +53,16 @@
                 </div>
                 <div class="popUp-body">
                     <div>
-                        <label for="name">Insira seu nome:</label><br>
-                        <input class="input" type="text" name="name" id="name">
+                        <form method="POST">
+                            <label for="name">Insira seu nome:</label><br>
+                            <input class="input" type="text" name="name" id="name">
+                            <label for="name">Pontuação: </label><br>
+                            <input class="input" type="number" name="score" id="score">
+                            <button type="submit" name="restart_game" id="restart_game" value="salvar">Enviar</button>
+                        </form>
                     </div>
                 </div>
                 <div class="popUp-footer">
-                    <button class="send" onclick="closePopUp()" id="restart_game">Enviar</button>
                 </div>
             </div>
         </div>
@@ -101,3 +105,23 @@
         </div>
     </footer>
 </body>
+
+<?php
+if (filter_input(INPUT_POST, 'restart_game')) {
+    $nome = filter_input(INPUT_POST, 'name');
+    $pontuacao = filter_input(INPUT_POST, 'score');
+
+    $dados = array(
+        'name' => $nome,
+        'score' => $pontucacao
+    );
+
+    include_once '../class/snakeScore.php';
+    $snake = new Snake();
+
+    $snake->setJsonDados(json_encode($dados));
+
+    $msg = $snake->salvar() === true ? "Erro" : "Dados salvo";
+
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
