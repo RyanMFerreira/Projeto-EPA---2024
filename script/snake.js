@@ -136,7 +136,6 @@ function restartGame() {
 }
 
 function gameOverFunction() {
-    restartGame();
     openPopUp();
 }
 
@@ -148,6 +147,7 @@ function placeFood() {
 function updateScore() {
     document.getElementById('score').textContent = "Pontuação: " + score;
 
+    // gambiarra pra enviar a pontuação para php. é meio tosco, mas é o que temos
     var input = document.getElementById('scoreInput');
     input.value = score;
 }
@@ -160,4 +160,6 @@ function openPopUp() {
 function closePopUp() {
     var popUp = document.getElementById("myModal");
     popUp.style.display = "none";
+
+    restartGame();
 }
