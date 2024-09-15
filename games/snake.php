@@ -56,8 +56,7 @@
                         <form method="POST">
                             <label for="name">Insira seu nome:</label><br>
                             <input class="input" type="text" name="name" id="name">
-                            <label for="name">Pontuação: </label><br>
-                            <input class="input" type="number" name="score" id="score">
+                            <input style="display: none" type="text" name="scoreInput" id="scoreInput" readonly>
                             <button type="submit" name="restart_game" id="restart_game" value="salvar">Enviar</button>
                         </form>
                     </div>
@@ -109,7 +108,7 @@
 <?php
 if (filter_input(INPUT_POST, 'restart_game')) {
     $nome = filter_input(INPUT_POST, 'name');
-    $pontuacao = filter_input(INPUT_POST, 'score');
+    $pontucacao = filter_input(INPUT_POST, 'scoreInput');
 
     $dados = array(
         'name' => $nome,

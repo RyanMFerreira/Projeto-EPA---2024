@@ -146,7 +146,10 @@ function placeFood() {
 }
 
 function updateScore() {
-    document.getElementById('score').textContent = score;
+    document.getElementById('score').textContent = "Pontuação: " + score;
+
+    var input = document.getElementById('scoreInput');
+    input.value = score;
 }
 
 function openPopUp() {
