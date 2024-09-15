@@ -51,17 +51,15 @@
                 <div class="popUp-header">
                     <h2>Game Over!</h2>
                 </div>
-                <div class="popUp-body">
-                    <div>
-                        <form method="POST">
-                            <label for="name">Insira seu nome:</label><br>
-                            <input class="input" type="text" name="name" id="name">
-                            <input style="display: none" type="text" name="scoreInput" id="scoreInput" readonly>
-                            <button type="submit" name="restart_game" id="restart_game" value="salvar">Enviar</button>
-                        </form>
-                    </div>
-                </div>
                 <div class="popUp-footer">
+                    <form method="POST">
+                        <label for="name">Insira seu nome:</label><br>
+                        <input class="input" type="text" name="name" id="name">
+                        <input style="display: none" type="text" name="scoreInput" id="scoreInput" readonly>
+                        <br>
+                        <button class="send" method="POST" type="submit" name="restart_game" id="restart_game"
+                            value="salvar">Enviar</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -120,7 +118,7 @@ if (filter_input(type: INPUT_POST, var_name: 'restart_game')) {
 
     $snake->setJsonDados(jsonDados: json_encode(value: $dados));
 
-    $msg = $snake->salvar() === true ? "Erro" : "Dados salvo";
+    $msg = $snake->salvar() === true ? "Erro ao salvar!" : "Dados salvos! :)";
 
     echo "<script type='text/javascript'>alert('$msg');</script>";
 }

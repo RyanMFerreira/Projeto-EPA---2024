@@ -147,7 +147,7 @@ function placeFood() {
 function updateScore() {
     document.getElementById('score').textContent = "Pontuação: " + score;
 
-    // gambiarra pra enviar a pontuação para php. é meio tosco, mas é o que temos
+    // gambiarra pra enviar a pontuação para php. é meio tosco, mas é o que temos por hoje
     var input = document.getElementById('scoreInput');
     input.value = score;
 }
