@@ -36,7 +36,7 @@
         </li>
     </ul>
 
-    <a class="backA" href="../catalog.ph">Voltar ao catálogo</a>
+    <a class="backA" href="../catalog.php">Voltar ao catálogo</a>
     <div class="main" id="game_container">
         <div class="center">
             <div id="score">Score: 0</div>

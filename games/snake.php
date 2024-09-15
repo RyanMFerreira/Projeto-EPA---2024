@@ -6,18 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake</title>
 
+    <link rel="stylesheet" href="../style/gameOverPopUp.css">
     <link rel="stylesheet" href="../style/catalog.css">
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="../style/navBar.css">
     <link rel="stylesheet" href="../style/sideMenu.css">
-    <link rel="stylesheet" href="../style/gameOverPopUp.css">
 
     <script src="../script.js"></script>
     <script src="../script/menuScript.js"></script>
 
-
     <link rel="stylesheet" href="../style/snake.css">
-    <script src="../script/snake.js"></script>
 </head>
 
 <body>
@@ -60,10 +58,13 @@
                     </div>
                 </div>
                 <div class="popUp-footer">
-                    <button class="send" id="restart_game" disabled>Enviar</button>
+                    <button class="send" onclick="closePopUp()" id="restart_game">Enviar</button>
                 </div>
             </div>
         </div>
+
+        <script src="../script/snake.js"></script>
+
     </div>
     <div class="main">
         <div class="tLeft">
@@ -79,7 +80,6 @@
             </ul>
         </div>
     </div>
-    <script src="../script/tetris.js"></script>
 
     <footer class="footer">
         <div class="footerInline">
@@ -101,5 +101,3 @@
         </div>
     </footer>
 </body>
-
-</>
