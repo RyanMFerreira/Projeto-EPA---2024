@@ -22,11 +22,20 @@ var gameOver = false;
 var count = 0;
 let lastKey = '';
 
-window.onload = function () {
+function start() {
     board = document.getElementById("board");
     board.height = rows * blockSize;
     board.width = cols * blockSize;
     context = board.getContext("2d");
+
+    var startGameButton = document.getElementById('start_game');
+    startGameButton.style.display = 'none';
+
+    var scoreH2 = document.getElementById('score');
+    scoreH2.style.display = 'block';
+
+    var gameBoard = document.getElementById('board');
+    gameBoard.style.display = 'block';
 
     placeFood();
     document.addEventListener("keyup", changeDirection);
@@ -94,10 +103,12 @@ function changeDirection(e) {
     if (e.code === "ArrowUp" && velocityY != 1) {
         velocityX = 0;
         velocityY = -1;
+        lastKey = 'up';
     }
     else if (e.code === "ArrowDown" && velocityY != -1) {
         velocityX = 0;
         velocityY = 1;
+        lastKey = 'down';
     }
     else if (e.code === "ArrowLeft" && velocityX != 1) {
         velocityX = -1;

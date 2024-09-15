@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake</title>
+    <link rel="stylesheet" href="../style/snake.css">
 
     <link rel="stylesheet" href="../style/gameOverPopUp.css">
     <link rel="stylesheet" href="../style/catalog.css">
@@ -15,7 +16,6 @@
     <script src="../script.js"></script>
     <script src="../script/menuScript.js"></script>
 
-    <link rel="stylesheet" href="../style/snake.css">
 </head>
 
 <body>
@@ -43,7 +43,7 @@
             <canvas id="board"></canvas>
         </div>
         <div id="game_controls">
-            <button id="start_game">Iniciar Jogo</button>
+            <button onclick="start()" id="start_game">Iniciar Jogo</button>
         </div>
 
         <div id="myModal" class="popUp">
