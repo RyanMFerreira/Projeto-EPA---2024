@@ -4,9 +4,8 @@ class Snake
     private $url = 'https://epa-project-2024-default-rtdb.firebaseio.com/';
     private $jsonDados;
 
-    var $posicao = 1;
+public function getJsonDados()
 
-    public function getJsonDados()
     {
         return $this->jsonDados;
     }
@@ -16,16 +15,16 @@ class Snake
         $this->jsonDados = $jsonDados;
     }
 
-    public function salvar()
+    public function salvar(): bool|string
     {
-        $caminho = curl_init($this->url . 'snake.json');
+        $caminho = curl_init(url: $this->url . 'Snake.json');
 
-        curl_setopt($caminho, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($caminho, CURLOPT_POSTFIELDS, $this->jsonDados);
-        curl_setopt($caminho, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt(handle: $caminho, option: CURLOPT_CUSTOMREQUEST, value: "POST");
+        curl_setopt(handle: $caminho, option: CURLOPT_POSTFIELDS, value: $this->jsonDados);
+        curl_setopt(handle: $caminho, option: CURLOPT_RETURNTRANSFER, value: true);
 
-        $resposta = curl_exec($caminho);
-        curl_close($caminho);
+        $resposta = curl_exec(handle: $caminho);
+        curl_close(handle: $caminho);
 
         return $resposta;
     }

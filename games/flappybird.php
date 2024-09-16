@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="../style/gameOverPopUp.css">
     <link rel="stylesheet" href="../style/flappybird.css">
 
-    <script src="../script.js"></script>
     <script src="../script/menuScript.js"></script>
     <script src="../script/flappybird.js"></script>
 </head>
@@ -44,23 +43,24 @@
             <button onclick="startGame()" id="start_game">Iniciar Jogo</button>
         </div>
 
+
         <div id="gameOverPopUp" class="popUp">
             <div class="popUp-content">
                 <div class="popUp-header">
                     <h2>Game Over!</h2>
                 </div>
-                <div class="popUp-body">
-                    <div>
+                <div class="popUp-footer">
+                    <form method="POST">
                         <label for="name">Insira seu nome:</label><br>
                         <input class="input" type="text" name="name" id="name">
-                    </div>
-                </div>
-                <div class="popUp-footer">
-                    <button class="send" onclick="closePopUp()">Enviar</button>
+                        <input style="display: none" type="text" name="scoreInput" id="scoreInput" readonly>
+                        <br>
+                        <button class="send" method="POST" type="submit" name="restart_game" id="restart_game"
+                            value="salvar">Enviar</button>
+                    </form>
                 </div>
             </div>
         </div>
-
     </div>
     <div class="main">
         <div class="tLeft">
@@ -99,6 +99,23 @@
     </footer>
 </body>
 
-</php>
-
 <?php
+if (filter_input(type: INPUT_POST, var_name: 'restart_game')) {
+    $nome = filter_input(type: INPUT_POST, var_name: 'name');
+    $pontucacao = filter_input(type: INPUT_POST, var_name: 'scoreInput');
+
+    $dados = array(
+        'name' => $nome,
+        'score' => $pontucacao
+    );
+
+    include_once '../class/flappyBirdScore.php';
+    $Flappy = new flappyBird();
+
+    $Flappy->setJsonDados(jsonDados: json_encode(value: $dados));
+
+    $msg = $Flappy->salvar() === true ? "Erro" : "Dados salvo";
+
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
+?>

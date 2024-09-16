@@ -4,7 +4,7 @@ class FlappyBird
     private $url = 'https://epa-project-2024-default-rtdb.firebaseio.com/';
     private $jsonDados;
 
-    public function getJsonDados()
+    public function getJsonDados(): mixed
     {
         return $this->jsonDados;
     }
@@ -18,12 +18,12 @@ class FlappyBird
     {
         $caminho = curl_init($this->url . 'flappyBird.json');
 
-        curl_setopt($caminho, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($caminho, CURLOPT_POSTFIELDS, $this->jsonDados);
-        curl_setopt($caminho, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt(handle: $caminho, option: CURLOPT_CUSTOMREQUEST, value: "POST");
+        curl_setopt(handle: $caminho, option: CURLOPT_POSTFIELDS, value: $this->jsonDados);
+        curl_setopt(handle: $caminho, option: CURLOPT_RETURNTRANSFER, value: true);
 
-        $resposta = curl_exec($caminho);
-        curl_close($caminho);
+        $resposta = curl_exec(handle: $caminho);
+        curl_close(handle: $caminho);
 
         return $resposta;
     }

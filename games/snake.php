@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake</title>
-    <link rel="stylesheet" href="../style/snake.css">
 
+    <link rel="stylesheet" href="../style/snake.css">
     <link rel="stylesheet" href="../style/gameOverPopUp.css">
     <link rel="stylesheet" href="../style/catalog.css">
     <link rel="stylesheet" href="../global.css">
@@ -15,7 +15,7 @@
 
     <script src="../script.js"></script>
     <script src="../script/menuScript.js"></script>
-
+    <script src="../script/snake.js"></script>
 </head>
 
 <body>
@@ -64,7 +64,6 @@
             </div>
         </div>
 
-        <script src="../script/snake.js"></script>
 
     </div>
     <div class="main">
@@ -104,9 +103,9 @@
 </body>
 
 <?php
-if (filter_input(INPUT_POST, 'restart_game')) {
-    $nome = filter_input(INPUT_POST, 'name');
-    $pontucacao = filter_input(INPUT_POST, 'scoreInput');
+if (filter_input(type: INPUT_POST, var_name: 'restart_game')) {
+    $nome = filter_input(type: INPUT_POST, var_name: 'name');
+    $pontucacao = filter_input(type: INPUT_POST, var_name: 'scoreInput');
 
     $dados = array(
         'name' => $nome,
@@ -116,7 +115,7 @@ if (filter_input(INPUT_POST, 'restart_game')) {
     include_once '../class/snakeScore.php';
     $snake = new Snake();
 
-    $snake->setJsonDados(json_encode($dados));
+    $snake->setJsonDados(jsonDados: json_encode(value: $dados));
 
     $msg = $snake->salvar() === true ? "Erro ao salvar!" : "Dados salvos! :)";
 
