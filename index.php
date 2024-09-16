@@ -35,7 +35,7 @@
 
     <div class="main">
         <div class="content">
-            <h1 class="title">Projeot EPA - 2024</h1>
+            <h1 class="title">Projeto EPA - 2024</h1>
             <a href="catalog.php"><button class="start">Começar a jogar!</button></a>
         </div>
 

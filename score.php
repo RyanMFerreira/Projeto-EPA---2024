@@ -98,7 +98,7 @@
                 <?php
                     include_once 'class/flappyBirdScore.php';
 
-                    $bird = new Snake();
+                    $bird = new FlappyBird();
                     $listar = $bird->listar();
 
                     if (!empty($listar)) {

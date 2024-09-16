@@ -72,61 +72,57 @@ function startGame() {
 }
 
 function update() {
-    requestAnimationFrame(update);
-    if (gameOver) {
-        return;
-    }
-    context.clearRect(0, 0, board.width, board.height);
+    if (!gameOver) {
+        requestAnimationFrame(update);
+        context.clearRect(0, 0, board.width, board.height);
 
-    //bard
-    velocityY += gravity;
-    // bird.y += velocityY;
-    bird.y = Math.max(bird.y + velocityY, 0); //apply gravity to current bird.y, limit the bird.y to top of the canvas
-    context.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
+        //bard
+        velocityY += gravity;
+        // bird.y += velocityY;
+        bird.y = Math.max(bird.y + velocityY, 0); //apply gravity to current bird.y, limit the bird.y to top of the canvas
+        context.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
 
-    if (bird.y > board.height) {
-        gameOver = true;
-    }
-
-    //canos
-    for (let i = 0; i < pipeArray.length; i++) {
-        let pipe = pipeArray[i];
-        pipe.x += velocityX;
-        context.drawImage(pipe.img, pipe.x, pipe.y, pipe.width, pipe.height);
-
-        if (!pipe.passed && bird.x > pipe.x + pipe.width) {
-            score += 0.5; //0.5 because there are 2 pipes! so 0.5*2 = 1, 1 for each set of pipes
-            pipe.passed = true;
-        }
-
-        if (detectCollision(bird, pipe)) {
+        if (bird.y > board.height) {
             gameOver = true;
         }
-    }
 
-    //clear canos
-    while (pipeArray.length > 0 && pipeArray[0].x < -pipeWidth) {
-        pipeArray.shift(); //removes first element from the array
-    }
+        //canos
+        for (let i = 0; i < pipeArray.length; i++) {
+            let pipe = pipeArray[i];
+            pipe.x += velocityX;
+            context.drawImage(pipe.img, pipe.x, pipe.y, pipe.width, pipe.height);
 
-    //score
-    context.fillStyle = "white";
-    context.font = "45px sans-serif";
-    context.fillText("Pontuação: " + score, 5, 45);
+            if (!pipe.passed && bird.x > pipe.x + pipe.width) {
+                score += 0.5; //0.5 because there are 2 pipes! so 0.5*2 = 1, 1 for each set of pipes
+                updateScore();
+                console.log(score);
+                pipe.passed = true;
+            }
 
-    if (gameOver) {
-        context.fillText("Pressione espaço para recomeçar", 5, 90);
-        openPopUp();
+            if (detectCollision(bird, pipe)) {
+                gameOver = true;
+            }
+        }
+
+        //clear canos
+        while (pipeArray.length > 0 && pipeArray[0].x < -pipeWidth) {
+            pipeArray.shift(); //removes first element from the array
+        }
+
+        //score
+        context.fillStyle = "white";
+        context.font = "45px sans-serif";
+        context.fillText("Pontuação: " + score, 5, 45);
+
+        if (gameOver) {
+            context.fillText("Pressione espaço para recomeçar", 5, 90);
+            openPopUp();
+        }
     }
-    updateScore();
 }
 
 //bagulho de colocar canos
 function placePipes() {
-    if (gameOver) {
-        return;
-    }
-
     //(0-1) * pipeHeight/2.
     // 0 -> -128 (pipeHeight/4)
     // 1 -> -128 - 256 (pipeHeight/4 - pipeHeight/2) = -3/4 pipeHeight

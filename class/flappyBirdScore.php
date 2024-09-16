@@ -27,4 +27,16 @@ class FlappyBird
 
         return $resposta;
     }
+
+    public function listar()
+    {
+        $caminho = curl_init($this->url . 'flappyBird.json');
+
+        curl_setopt($caminho, CURLOPT_RETURNTRANSFER, true);
+
+        $resposta = curl_exec($caminho);
+        curl_close($caminho);
+
+        return $dados = json_decode($resposta, true);
+    }
 }
