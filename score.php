@@ -234,5 +234,3 @@
         </div>
     </footer>
 </body>
-
-<?php
