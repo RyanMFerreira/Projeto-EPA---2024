@@ -1,5 +1,5 @@
 <?php
-class Tetris
+class FlappyBird
 {
     private $url = 'https://epa-project-2024-default-rtdb.firebaseio.com/';
     private $jsonDados;

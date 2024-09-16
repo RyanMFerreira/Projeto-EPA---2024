@@ -96,10 +96,10 @@
                 </tr>
 
                 <?php
-                    include_once 'class/snakeScore.php';
+                    include_once 'class/flappyBirdScore.php';
 
-                    $snake = new Snake();
-                    $listar = $snake->listar();
+                    $bird = new Snake();
+                    $listar = $bird->listar();
 
                     if (!empty($listar)) {
                         $scores = array_column($listar, 'score');
