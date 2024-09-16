@@ -1,5 +1,5 @@
-<!DOCTYPE php>
-<php lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -104,6 +104,4 @@
     </footer>
 </body>
 
-</php>
-
-<?php
+</html>

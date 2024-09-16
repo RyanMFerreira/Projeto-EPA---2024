@@ -102,6 +102,7 @@
     </footer>
 </body>
 
+</html>
 <?php
 if (filter_input(type: INPUT_POST, var_name: 'restart_game')) {
     $nome = filter_input(type: INPUT_POST, var_name: 'name');
