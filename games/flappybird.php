@@ -99,6 +99,23 @@
     </footer>
 </body>
 
-</php>
-
 <?php
+if (filter_input(type: INPUT_POST, var_name: 'restart_game')) {
+    $nome = filter_input(type: INPUT_POST, var_name: 'name');
+    $pontucacao = filter_input(type: INPUT_POST, var_name: 'score');
+
+    $dados = array(
+        'name' => $nome,
+        'score' => $pontucacao
+    );
+
+    include_once '../class/snakeScore.php';
+    $snake = new Snake();
+
+    $snake->setJsonDados(jsonDados: json_encode(value: $dados));
+
+    $msg = $snake->salvar() === true ? "Erro" : "Dados salvo";
+
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
+?>
