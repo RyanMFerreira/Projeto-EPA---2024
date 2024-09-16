@@ -16,7 +16,7 @@ class Snake
 
     public function salvar(): bool|string
     {
-        $caminho = curl_init(url: $this->url . 'snake.json');
+        $caminho = curl_init(url: $this->url . 'Snake.json');
 
         curl_setopt(handle: $caminho, option: CURLOPT_CUSTOMREQUEST, value: "POST");
         curl_setopt(handle: $caminho, option: CURLOPT_POSTFIELDS, value: $this->jsonDados);

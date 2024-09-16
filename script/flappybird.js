@@ -34,7 +34,7 @@ let velocityY = 0; //bird jump speed
 let gravity = 0.15; //gravidade dificil de balancear
 
 let gameOver = false;
-let score = 0;
+var score = 0;
 
 function startGame() {
     board = document.getElementById("board");
@@ -118,6 +118,7 @@ function update() {
         context.fillText("Pressione espaço para recomeçar", 5, 90);
         openPopUp();
     }
+    updateScore();
 }
 
 //bagulho de colocar canos
@@ -187,4 +188,10 @@ function openPopUp() {
 function closePopUp() {
     var popUp = document.getElementById("gameOverPopUp");
     popUp.style.display = "none";
+}
+
+function updateScore() {
+    // gambiarra pra enviar a pontuação para php. é meio tosco, mas é o que temos por hoje
+    var input = document.getElementById('scoreInput');
+    input.value = score;
 }
