@@ -48,7 +48,7 @@
         <div id="jogo1" class="tab-content">
             <table>
                 <tr>
-                    <th>Posição</th>
+                    <th id="pos">Posição</th>
                     <th>Nome</th>
                     <th class="topRightBorder">Pontuação</th>
                 </tr>

@@ -137,3 +137,7 @@ input {
 .input {
     width: 100%;
 }
+
+.topLeftBorder {
+    border-top-left-radius: var(--ui-border);
+}
