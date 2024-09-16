@@ -61,6 +61,11 @@ a button {
     font-weight: bold;
 }
 
+.tabActive {
+    background-color: var(--nav-color);
+    font-weight: bold;
+}
+
 footer {
     background-color: var(--nav-color);
     padding: 2.5%;
@@ -131,4 +136,8 @@ input {
 
 .input {
     width: 100%;
+}
+
+.topLeftBorder {
+    border-top-left-radius: var(--ui-border);
 }

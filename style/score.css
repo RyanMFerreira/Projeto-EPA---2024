@@ -65,8 +65,11 @@ h2 {
     margin: 0;
 }
 
+.tab{
+    background: none;
+}
+
 .tab-link {
-    background-color: var(--nav-color);
     padding: 12px 48px;
     cursor: pointer;
     border-radius: var(--ui-border) var(--ui-border) 0 0;
@@ -76,8 +79,4 @@ h2 {
 .tab-content {
     margin: 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.tab button:hover {
-    transform: scale(1.0);
 }

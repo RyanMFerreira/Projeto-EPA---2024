@@ -4,7 +4,8 @@ class Snake
     private $url = 'https://epa-project-2024-default-rtdb.firebaseio.com/';
     private $jsonDados;
 
-    public function getJsonDados(): mixed
+public function getJsonDados()
+
     {
         return $this->jsonDados;
     }
@@ -28,4 +29,15 @@ class Snake
         return $resposta;
     }
 
+    public function listar()
+    {
+        $caminho = curl_init($this->url . 'snake.json');
+
+        curl_setopt($caminho, CURLOPT_RETURNTRANSFER, true);
+
+        $resposta = curl_exec($caminho);
+        curl_close($caminho);
+
+        return $dados = json_decode($resposta, true);
+    }
 }
