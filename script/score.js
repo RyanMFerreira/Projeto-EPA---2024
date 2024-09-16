@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     $('#' + tabId).slideDown();
 
-    $('.tab-link').removeClass('active');
-    $(this).addClass('active');
+    $('.tab-link').removeClass('tabActive');
+    $(this).addClass('tabActive');
   }).first().click();
 });

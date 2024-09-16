@@ -44,58 +44,59 @@ function start() {
 }
 
 function update() {
-    console.log("GameOver");
-    console.log("X [0]: " + snakeX[0]);
-    console.log("Y [0]: " + snakeY[0]);
-    console.log("Size: " + snakeSize);
-    console.log("DX: " + velocityX);
-    console.log("DY: " + velocityX);
-    console.log("Ultima tecla: " + lastKey);
+    if (!gameOver) {
+        console.log("X [0]: " + snakeX[0]);
+        console.log("Y [0]: " + snakeY[0]);
+        console.log("Size: " + snakeSize);
+        console.log("DX: " + velocityX);
+        console.log("DY: " + velocityX);
+        console.log("Ultima tecla: " + lastKey);
 
-    count++;
-    if (count > 1) {
-        console.clear();
-        count = 0;
-    }
+        count++;
+        if (count > 1) {
+            console.clear();
+            count = 0;
+        }
 
-    context.fillStyle = "black";
-    context.fillRect(0, 0, board.width, board.height);
+        context.fillStyle = "black";
+        context.fillRect(0, 0, board.width, board.height);
 
-    context.fillStyle = "red";
-    context.fillRect(foodX, foodY, blockSize, blockSize);
+        context.fillStyle = "red";
+        context.fillRect(foodX, foodY, blockSize, blockSize);
 
-    if (snakeX[0] === foodX && snakeY[0] === foodY) {
-        placeFood();
-        snakeSize++;
-        score++;
-        updateScore();
-    }
+        if (snakeX[0] === foodX && snakeY[0] === foodY) {
+            placeFood();
+            snakeSize++;
+            score++;
+            updateScore();
+        }
 
-    for (let i = snakeSize; i > 0; i--) {
-        snakeX[i] = snakeX[i - 1];
-        snakeY[i] = snakeY[i - 1];
-    }
+        for (let i = snakeSize; i > 0; i--) {
+            snakeX[i] = snakeX[i - 1];
+            snakeY[i] = snakeY[i - 1];
+        }
 
-    snakeX[0] += velocityX * blockSize;
-    snakeY[0] += velocityY * blockSize;
+        snakeX[0] += velocityX * blockSize;
+        snakeY[0] += velocityY * blockSize;
 
-    context.fillStyle = "lime";
-    for (let i = 0; i < snakeSize; i++) {
-        context.fillRect(snakeX[i], snakeY[i], blockSize, blockSize);
-    }
+        context.fillStyle = "lime";
+        for (let i = 0; i < snakeSize; i++) {
+            context.fillRect(snakeX[i], snakeY[i], blockSize, blockSize);
+        }
 
-    if (snakeX[0] < 0 || snakeX[0] >= cols * blockSize || snakeY[0] < 0 || snakeY[0] >= rows * blockSize) {
-        gameOver = true;
-    }
-
-    for (let i = 3; i < snakeSize; i++) {
-        if (snakeX[0] === snakeX[i] && snakeY[0] === snakeY[i]) {
+        if (snakeX[0] < 0 || snakeX[0] >= cols * blockSize || snakeY[0] < 0 || snakeY[0] >= rows * blockSize) {
             gameOver = true;
         }
-    }
 
-    if (gameOver === true) {
-        gameOverFunction();
+        for (let i = 3; i < snakeSize; i++) {
+            if (snakeX[0] === snakeX[i] && snakeY[0] === snakeY[i]) {
+                gameOver = true;
+            }
+        }
+
+        if (gameOver === true) {
+            gameOverFunction();
+        }
     }
 }
 
