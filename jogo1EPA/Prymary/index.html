@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz de Conhecimentos Gerais</h1>
+        <div id="question-container" class="hide">
+            <div id="question">Pergunta aqui</div>
+            <div id="answer-buttons" class="btn-grid"></div>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="btn start-btn">Começar</button>
+            <button id="next-btn" class="btn hide">Próxima</button>
+        </div>
+        <div id="score-container" class="hide">
+            <p id="score">Pontuação: 0</p>
+        </div>
+        <div id="final-container" class="hide">
+            <h2>Parabéns!</h2>
+            <p id="final-score">Você fez <span id="final-points"></span> pontos!</p>
+            <button id="restart-btn" class="btn">Jogar novamente</button>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="sounds/correct.mp3"></audio>
+    <audio id="wrong-sound" src="sounds/wrong.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
