@@ -43,7 +43,7 @@
             <canvas id="board"></canvas>
         </div>
         <div id="game_controls">
-            <button onclick="start()" id="start_game">Iniciar Jogo</button>
+            <button class="gameStart" onclick="start()" id="start_game">Iniciar Jogo</button>
         </div>
 
         <div id="myModal" class="popUp">
@@ -101,7 +101,6 @@
         </div>
     </footer>
 </body>
-
 </html>
 
 <?php

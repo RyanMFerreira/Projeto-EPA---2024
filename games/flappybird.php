@@ -45,7 +45,6 @@
             <button onclick="startGame()" id="start_game">Iniciar Jogo</button>
         </div>
 
-
         <div id="gameOverPopUp" class="popUp">
             <div class="popUp-content">
                 <div class="popUp-header">
@@ -74,7 +73,6 @@
             <h3>Créditos:</h3>
             <ul>
                 <li>Feito por Arthur Martin.</li>
-                <li>Aprimorado por Ryan Ferreira.</li>
             </ul>
         </div>
     </div>

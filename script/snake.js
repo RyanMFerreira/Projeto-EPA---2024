@@ -28,8 +28,8 @@ function start() {
     board.width = cols * blockSize;
     context = board.getContext("2d");
 
-    var startGameButton = document.getElementById('start_game');
-    startGameButton.style.display = 'none';
+    var Maindiv = document.getElementById('game_controls');
+    Maindiv.style.display = 'none';
 
     var showScore = document.getElementById('score');
     showScore.style.display = 'block';

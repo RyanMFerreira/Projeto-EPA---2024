@@ -8,8 +8,8 @@ Assim, fica mais fácil de organizar e reutilizar códigos */
     --div-color: #373737;
     --nav-color: #0F0F0F;
     --navbar-hover-color: #a0a0a0;
-    --button-border: 4px;
-    --ui-border: 8px;
+    --button-border: 16px;
+    --ui-border: 24px;
 }
 
 * {

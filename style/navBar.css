@@ -6,6 +6,7 @@
     padding: 0;
     overflow: hidden;
     background-color: var(--nav-color);
+    height: auto;
 }
 
 .navBar li {
