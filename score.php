@@ -54,29 +54,29 @@
                 </tr>
 
                 <?php
-                    include_once 'class/snakeScore.php';
+                include_once 'class/snakeScore.php';
 
-                    $snake = new Snake();
-                    $listar = $snake->listar();
+                $snake = new Snake();
+                $listar = $snake->listar();
 
-                    if (!empty($listar)) {
-                        $scores = array_column($listar, 'score');
-                        array_multisort($scores, SORT_DESC, $listar);
+                if (!empty($listar)) {
+                    $scores = array_column($listar, 'score');
+                    array_multisort($scores, SORT_DESC, $listar);
 
-                        $posicao = 1;
+                    $posicao = 1;
 
-                        foreach ($listar as $mostrar) {
+                    foreach ($listar as $mostrar) {
                         $showPosition = "#" . $posicao;
-                            ?>
-                            <tr>
-                                <td scope="row"><?= $showPosition ?></td>
-                                <td><?= $mostrar['name'] ?></td>
-                                <td><?= $mostrar['score'] ?></td>
-                            </tr>
-                            <?php
-                            $posicao++; 
-                        }
+                        ?>
+                        <tr>
+                            <td scope="row"><?= $showPosition ?></td>
+                            <td><?= $mostrar['name'] ?></td>
+                            <td><?= $mostrar['score'] ?></td>
+                        </tr>
+                        <?php
+                        $posicao++;
                     }
+                }
                 ?>
 
                 <tr>
@@ -90,35 +90,35 @@
         <div id="jogo2" class="tab-content">
             <table>
                 <tr>
-                    <th >Posição</th>
+                    <th>Posição</th>
                     <th>Nome</th>
                     <th class="topRightBorder">Pontuação</th>
                 </tr>
 
                 <?php
-                    include_once 'class/flappyBirdScore.php';
+                include_once 'class/flappyBirdScore.php';
 
-                    $bird = new FlappyBird();
-                    $listar = $bird->listar();
+                $bird = new FlappyBird();
+                $listar = $bird->listar();
 
-                    if (!empty($listar)) {
-                        $scores = array_column($listar, 'score');
-                        array_multisort($scores, SORT_DESC, $listar);
+                if (!empty($listar)) {
+                    $scores = array_column($listar, 'score');
+                    array_multisort($scores, SORT_DESC, $listar);
 
-                        $posicao = 1;
+                    $posicao = 1;
 
-                        foreach ($listar as $mostrar) {
+                    foreach ($listar as $mostrar) {
                         $showPosition = "#" . $posicao;
-                            ?>
-                            <tr>
-                                <td scope="row"><?= $showPosition ?></td>
-                                <td><?= $mostrar['name'] ?></td>
-                                <td><?= $mostrar['score'] ?></td>
-                            </tr>
-                            <?php
-                            $posicao++; 
-                        }
+                        ?>
+                        <tr>
+                            <td scope="row"><?= $showPosition ?></td>
+                            <td><?= $mostrar['name'] ?></td>
+                            <td><?= $mostrar['score'] ?></td>
+                        </tr>
+                        <?php
+                        $posicao++;
                     }
+                }
                 ?>
 
                 <tr>
@@ -132,35 +132,35 @@
         <div id="jogo3" class="tab-content">
             <table>
                 <tr>
-                    <th >Posição</th>
+                    <th>Posição</th>
                     <th>Nome</th>
                     <th class="topRightBorder">Pontuação</th>
                 </tr>
 
                 <?php
-                    include_once 'class/snakeScore.php';
+                include_once 'class/tetrisScore.php';
 
-                    $snake = new Snake();
-                    $listar = $snake->listar();
+                $tetris = new Tetris();
+                $listar = $tetris->listar();
 
-                    if (!empty($listar)) {
-                        $scores = array_column($listar, 'score');
-                        array_multisort($scores, SORT_DESC, $listar);
+                if (!empty($listar)) {
+                    $scores = array_column($listar, 'score');
+                    array_multisort($scores, SORT_DESC, $listar);
 
-                        $posicao = 1;
+                    $posicao = 1;
 
-                        foreach ($listar as $mostrar) {
+                    foreach ($listar as $mostrar) {
                         $showPosition = "#" . $posicao;
-                            ?>
-                            <tr>
-                                <td scope="row"><?= $showPosition ?></td>
-                                <td><?= $mostrar['name'] ?></td>
-                                <td><?= $mostrar['score'] ?></td>
-                            </tr>
-                            <?php
-                            $posicao++; 
-                        }
+                        ?>
+                        <tr>
+                            <td scope="row"><?= $showPosition ?></td>
+                            <td><?= $mostrar['name'] ?></td>
+                            <td><?= $mostrar['score'] ?></td>
+                        </tr>
+                        <?php
+                        $posicao++;
                     }
+                }
                 ?>
 
                 <tr>
@@ -174,35 +174,35 @@
         <div id="jogo4" class="tab-content">
             <table>
                 <tr>
-                    <th >Posição</th>
+                    <th>Posição</th>
                     <th>Nome</th>
                     <th class="topRightBorder">Pontuação</th>
                 </tr>
 
                 <?php
-                    include_once 'class/snakeScore.php';
+                include_once 'class/snakeScore.php';
 
-                    $snake = new Snake();
-                    $listar = $snake->listar();
+                $snake = new Snake();
+                $listar = $snake->listar();
 
-                    if (!empty($listar)) {
-                        $scores = array_column($listar, 'score');
-                        array_multisort($scores, SORT_DESC, $listar);
+                if (!empty($listar)) {
+                    $scores = array_column($listar, 'score');
+                    array_multisort($scores, SORT_DESC, $listar);
 
-                        $posicao = 1;
+                    $posicao = 1;
 
-                        foreach ($listar as $mostrar) {
+                    foreach ($listar as $mostrar) {
                         $showPosition = "#" . $posicao;
-                            ?>
-                            <tr>
-                                <td scope="row"><?= $showPosition ?></td>
-                                <td><?= $mostrar['name'] ?></td>
-                                <td><?= $mostrar['score'] ?></td>
-                            </tr>
-                            <?php
-                            $posicao++; 
-                        }
+                        ?>
+                        <tr>
+                            <td scope="row"><?= $showPosition ?></td>
+                            <td><?= $mostrar['name'] ?></td>
+                            <td><?= $mostrar['score'] ?></td>
+                        </tr>
+                        <?php
+                        $posicao++;
                     }
+                }
                 ?>
 
                 <tr>

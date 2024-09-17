@@ -128,7 +128,6 @@
 
         if (collide(area, player)) {
             area.forEach(row => row.fill(0));
-            player.score = 0;
             updateScore();
             gameOver();
         }
@@ -169,18 +168,10 @@
         draw();
     }
 
-    function updateScore() {
-        document.getElementById('score').textContent = "Score: " + player.score;
-    }
-
     function gameOver() {
         clearInterval(gameLoop);
 
-        var restartGameButton = document.getElementById('restart_game');
-        restartGameButton.style.display = 'block';
-
-        document.getElementById("start_game").disabled = true;
-        document.getElementById("restart_game").disabled = false;
+        updateScore();
         openPopUp();
     }
 
@@ -206,9 +197,6 @@
         gameRun = true;
         dropInterval = 30;
         gameLoop = setInterval(update, dropInterval);
-        document.getElementById("start_game").disabled = true;
-        document.getElementById("restart_game").disabled = true;
-        document.getElementById('game_over').textContent = "";
         updateScore();
     }
 
@@ -229,13 +217,22 @@
         }
     }
 
+    function updateScore() {
+        document.getElementById('score').textContent = "Score: " + player.score;
+
+        // gambiarra pra enviar a pontuação para php. é meio tosco, mas é o que temos por hoje
+        var input = document.getElementById('scoreInput');
+        input.value = player.score;
+
+        console.log(score);
+
+    }
+
     document.getElementById("start_game").addEventListener("click", () => {
         if (!gameRun) {
             restartGame();
         }
     });
-
-    document.getElementById("restart_game").addEventListener("click", () => restartGame());
 
     document.addEventListener("keydown", (e) => {
         if (!gameRun) return;
@@ -261,6 +258,7 @@ var popUp = document.getElementById("myModal");
 
 function openPopUp() {
     popUp.style.display = "block";
+
 }
 
 function closePopUp() {
