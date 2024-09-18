@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" , content="width=device-width, initial-scale=1.0">
-    <title>Flappy Bird</title>
+    <title>2048</title>
 
     <link rel="stylesheet" href="../style/catalog.css">
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="../style/navBar.css">
     <link rel="stylesheet" href="../style/sideMenu.css">
     <link rel="stylesheet" href="../style/gameOverPopUp.css">
-    <link rel="stylesheet" href="../style/flappybird.css">
+    <link rel="stylesheet" href="../style/2048.css">
 
     <script src="../script.js"></script>
 
     <script src="../script/menuScript.js"></script>
-    <script src="../script/flappybird.js"></script>
+    <script src="../script/2048.js"></script>
 </head>
 
 <body>
@@ -40,7 +40,17 @@
     <a class="backA" href="../catalog.php">Voltar ao catálogo</a>
 
     <div class="main center" id="game_container">
-        <canvas id="board"></canvas>
+        <div class="container">
+            <div class="info">
+                <h1>2048</h1>
+                <div class="score-container">
+                    <div class="score-title">score</div>
+                    <span id="score">0</span>
+                </div>
+            </div>
+            <span id="result">Join the numbers and get to the <b>2048</b> tile!</span>
+            <div class="grid"></div>
+        </div>
         <div id="game_controls">
             <button onclick="startGame()" id="start_game">Iniciar Jogo</button>
         </div>
@@ -109,12 +119,12 @@ if (filter_input(type: INPUT_POST, var_name: 'restart_game')) {
         'score' => $pontucacao
     );
 
-    include_once '../class/flappyBirdScore.php';
-    $bird = new FlappyBird();
+    include_once '../class/2048score.php';
+    $n = new n2048();
 
-    $bird->setJsonDados(jsonDados: json_encode(value: $dados));
+    $n->setJsonDados(jsonDados: json_encode(value: $dados));
 
-    $msg = $bird->salvar() === true ? "Erro ao salvar!" : "Dados salvos! :)";
+    $msg = $n->salvar() === true ? "Erro ao salvar!" : "Dados salvos! :)";
 
     echo "<script type='text/javascript'>alert('$msg');</script>";
 }

@@ -71,14 +71,14 @@
                 </div>
             </div>
             <div class="card">
-                <a href="naoSeiSeChamarOMatheusFoiRealmenteUmaBoaIdeia/forca.php">
+                <a href="games/2048.php">
                     <div class="temp"></div>
                     <div class="container">
-                        <h4><b>Forca</b></h4>
-                        <p>Feito por Matheus Faria.</p>
+                        <h4><b>2048</b></h4>
+                        <p>Feito por Arthur Martin.</p>
                     </div>
                 </a>
-            </div>
+            </div>            
         </div>
     </div>
 
