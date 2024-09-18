@@ -64,11 +64,13 @@
                 </a>
             </div>
             <div class="card">
+                <a href="games/dino.php">
                 <div class="temp"></div>
                 <div class="container">
                     <h4><b>T-Rex Game</b></h4>
                     <p>Feito por Ryan Ferreira.</p>
                 </div>
+                </a>
             </div>
             <div class="card">
                 <a href="games/2048.php">

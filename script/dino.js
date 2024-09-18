@@ -3,8 +3,8 @@ let boardWidth = 750;
 let boardHeight = 250;
 let context;
 
-let hitBoxAdjust_xSize = 36;
-let hitBoxAdjust_xPosition = 12;
+let hitBoxAdjust_xSize = 50;
+let hitBoxAdjust_xPosition = 19;
 
 let dinoWidth = 88 - hitBoxAdjust_xSize;
 let dinoHeight = 94;
@@ -47,7 +47,6 @@ window.onload = function () {
 
     context = board.getContext("2d");
 
-
     dinoImg = new Image();
     dinoImg.src = "../assets/dinoAssets/dino.png";
     dinoImg.onload = function () {
@@ -81,10 +80,10 @@ function update() {
     velocityY += gravity;
     dino.y = Math.min(dino.y + velocityY, dinoY);
 
+    //context.fillStyle = "red";
+    //context.fillRect(dino.x, dino.y, dino.width, dino.height);
 
-    context.fillStyle = "red";
-    context.fillRect(dino.x, dino.y, dino.width, dino.height);
-    context.drawImage(dinoImg, dino.x  - hitBoxAdjust_xPosition, dino.y, dino.width + hitBoxAdjust_xSize, dino.height);
+    context.drawImage(dinoImg, dino.x - hitBoxAdjust_xPosition, dino.y, dino.width + hitBoxAdjust_xSize, dino.height);
 
     for (let i = 0; i < cactusArray.length; i++) {
         let cactus = cactusArray[i];
@@ -95,29 +94,36 @@ function update() {
             gameOver = true;
             dinoImg.src = "../assets/dinoAssets/dino-dead.png";
             dinoImg.onload = function () {
-                context.drawImage(dinoImg, dino.x, dino.y, dino.width + 24, dino.height);
+                context.drawImage(dinoImg, dino.x - hitBoxAdjust_xPosition, dino.y, dino.width + hitBoxAdjust_xSize, dino.height);
             }
         }
     }
 
-    context.fillStyle = "black";
-    context.font = "20px courier";
-    score++;
-    context.fillText(score, 5, 20);
+    score += 0.25;
+
+    // Exibir a pontuação
+    document.getElementById('score').textContent = "Pontuação: " + score;
+
+    // Mandar pontuação para o input que será usado no PHP
+    var input = document.getElementById('scoreInput');
+    input.value = score;
+
+    if (score % 100 === 0){
+        velocityX *= 1.05;
+    }
+    console.log(velocityX);
 }
 
-function moveDino(e) {
-    if ((e.code == "Space" || e.code == "ArrowUp") && dino.y == dinoY) {
-        //jump
+function moveDino(event) {
+    if ((event.code == "Space" || event.code == "ArrowUp") && dino.y == dinoY) {
         velocityY = -10;
     }
-    else if (e.code == "ArrowDown" && dino.y == dinoY) {
+    else if (event.code == "ArrowDown" && dino.y == dinoY) {
+        // Não vai dar tempo de fazer o resto 
     }
-
 }
 
 function placeCactus() {
-
     let cactus = {
         img: null,
         x: cactusX,
@@ -128,17 +134,17 @@ function placeCactus() {
 
     let placeCactusChance = Math.random();
 
-    if (placeCactusChance > .90) {
+    if (placeCactusChance > .50) {
         cactus.img = cactus3Img;
         cactus.width = cactus3Width;
         cactusArray.push(cactus);
     }
-    else if (placeCactusChance > .70) {
+    else if (placeCactusChance > .25) {
         cactus.img = cactus2Img;
         cactus.width = cactus2Width;
         cactusArray.push(cactus);
     }
-    else if (placeCactusChance > .50) {
+    else if (placeCactusChance > .10) {
         cactus.img = cactus1Img;
         cactus.width = cactus1Width;
         cactusArray.push(cactus);
