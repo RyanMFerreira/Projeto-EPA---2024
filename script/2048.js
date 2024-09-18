@@ -6,6 +6,12 @@ function startGame() {
   const width = 4;
   let score = 0;
 
+  var gameControls = document.getElementById('game_controls');
+  gameControls.style.display = 'none';
+
+  var gameContainer = document.getElementById('container');
+  gameContainer.style.display = 'block';
+
   //create the playing board
   function createBoard() {
     square = document.createElement("div");

@@ -40,15 +40,15 @@
     <a class="backA" href="../catalog.php">Voltar ao catálogo</a>
 
     <div class="main center" id="game_container">
-        <div class="container">
+        <div id="container" class="container">
             <div class="info">
                 <h1>2048</h1>
                 <div class="score-container">
-                    <div class="score-title">score</div>
+                    <div class="score-title">Score:</div>
                     <span id="score">0</span>
                 </div>
             </div>
-            <span id="result">Join the numbers and get to the <b>2048</b> tile!</span>
+            <span id="result">Junte os números e chegue ao quadrado <b>2048</b>!</span>
             <div class="grid"></div>
         </div>
         <div id="game_controls">
