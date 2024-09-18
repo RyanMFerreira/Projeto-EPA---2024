@@ -56,7 +56,7 @@
                 <?php
                 include_once 'class/snakeScore.php';
 
-                $snake = new Snake();
+                $snake = new Quiz();
                 $listar = $snake->listar();
 
                 if (!empty($listar)) {
@@ -182,7 +182,7 @@
                 <?php
                 include_once 'class/snakeScore.php';
 
-                $snake = new Snake();
+                $snake = new Quiz();
                 $listar = $snake->listar();
 
                 if (!empty($listar)) {
