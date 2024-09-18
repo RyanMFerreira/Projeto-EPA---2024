@@ -114,12 +114,12 @@ if (filter_input(type: INPUT_POST, var_name: 'restart_game')) {
         'score' => $pontucacao
     );
 
-    include_once '../class/snakeScore.php';
-    $snake = new Snake();
+    include_once '../class/dinoScore.php';
+    $dino = new Dino();
 
-    $snake->setJsonDados(jsonDados: json_encode(value: $dados));
+    $dino->setJsonDados(jsonDados: json_encode(value: $dados));
 
-    $msg = $snake->salvar() === true ? "Erro ao salvar!" : "Dados salvos! :)";
+    $msg = $dino->salvar() === true ? "Erro ao salvar!" : "Dados salvos! :)";
 
     echo "<script type='text/javascript'>alert('$msg');</script>";
 }

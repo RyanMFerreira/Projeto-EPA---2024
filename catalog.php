@@ -67,17 +67,26 @@
                 <a href="games/dino.php">
                 <div class="temp"></div>
                 <div class="container">
-                    <h4><b>T-Rex Game</b></h4>
+                    <h4><b>Dino Game</b></h4>
                     <p>Feito por Ryan Ferreira.</p>
                 </div>
                 </a>
             </div>
             <div class="card">
-                <a href="games/2048.php">
+                <a href="games/breakout.php">
                     <div class="temp"></div>
                     <div class="container">
-                        <h4><b>2048</b></h4>
+                        <h4><b>Breakout</b></h4>
                         <p>Feito por Arthur Martin.</p>
+                    </div>
+                </a>
+            </div>            
+            <div class="card">
+                <a href="games/breakout.php">
+                    <div class="temp"></div>
+                    <div class="container">
+                        <h4><b>Space</b></h4>
+                        <p>Feito por Matheus Faria; Pt. Ryan.</p>
                     </div>
                 </a>
             </div>            
