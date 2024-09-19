@@ -13,15 +13,12 @@ a.side {
     color: white;
     padding: var(--ui-border);
     text-decoration: none;
-    display: block;
-    
 }
 
 .content {
     padding: 2.5%;
     float: left;
     width: 50%;
-    min-height: 100%;
 }
 
 button.start {

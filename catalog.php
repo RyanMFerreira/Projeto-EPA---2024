@@ -38,7 +38,7 @@
         <div class="inline">
             <div class="card">
                 <a href="games/tetris.php">
-                    <div class="temp"></div>
+                    <div class="temp" style="background-image: url(assets/catalogAssets/tetris.png); background-size: 256px"></div>
                     <div class="container">
                         <h4><b>Tetris</b></h4>
                         <p>Feito por Murilo Andrade.</p>
@@ -47,7 +47,7 @@
             </div>
             <div class="card">
                 <a href="games/flappybird.php">
-                    <div class="temp"></div>
+                    <div class="temp" style="background-image: url(assets/catalogAssets/flappyBird.png); background-size: 256px"></div>
                     <div class="container">
                         <h4><b>Flappy Bird</b></h4>
                         <p>Feito por Arthur Martin.</p>
@@ -56,7 +56,7 @@
             </div>
             <div class="card">
                 <a href="games/snake.php">
-                    <div class="temp"></div>
+                    <div class="temp" style="background-image: url(assets/catalogAssets/snake.png); background-size: 256px"></div>
                     <div class="container">
                         <h4><b>Snake</b></h4>
                         <p>Feito por Ryan Ferreira.</p>
@@ -65,7 +65,7 @@
             </div>
             <div class="card">
                 <a href="games/dino.php">
-                <div class="temp"></div>
+                <div class="temp" style="background-image: url(assets/catalogAssets/dino.png); background-size: 256px"></div>
                 <div class="container">
                     <h4><b>Dino Game</b></h4>
                     <p>Feito por Ryan Ferreira.</p>
@@ -74,7 +74,7 @@
             </div>
             <div class="card">
                 <a href="games/breakout.php">
-                    <div class="temp"></div>
+                    <div class="temp" style="background-image: url(assets/catalogAssets/breakout.png); background-size: 256px"></div>
                     <div class="container">
                         <h4><b>Breakout</b></h4>
                         <p>Feito por Arthur Martin.</p>
@@ -82,11 +82,11 @@
                 </a>
             </div>            
             <div class="card">
-                <a href="games/breakout.php">
-                    <div class="temp"></div>
+                <a href="games/space/space.php">
+                    <div class="temp" style="background-image: url(assets/catalogAssets/space.png); background-size: 256px"></div>
                     <div class="container">
                         <h4><b>Space</b></h4>
-                        <p>Feito por Matheus Faria; Pt. Ryan.</p>
+                        <p>Feito por Matheus Faria.</p>
                     </div>
                 </a>
             </div>            

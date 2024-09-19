@@ -42,7 +42,7 @@
     <div class="main center" id="game_container">
         <canvas id="board"></canvas>
         <div id="game_controls">
-            <button onclick="startGame()" id="start_game">Iniciar Jogo</button>
+            <button onclick="startGame()" class="gameStart" id="start_game">Iniciar Jogo</button>
         </div>
 
         <div id="gameOverPopUp" class="popUp">

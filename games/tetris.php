@@ -43,7 +43,7 @@
             <canvas id="tetris" width="200" height="400"></canvas>
         </div>
         <div id="game_controls">
-            <button id="start_game">Iniciar Jogo</button>
+            <button class="gameStart" id="start_game">Iniciar Jogo</button>
         </div>
 
         <div id="myModal" class="popUp">

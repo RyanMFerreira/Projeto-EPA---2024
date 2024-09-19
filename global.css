@@ -1,6 +1,11 @@
 /* Esse arquivo é onde vai o estilo que estará presente em todas as páginas do projeto.
 Assim, fica mais fácil de organizar e reutilizar códigos */
 
+@font-face {
+    font-family: "PFont";
+    src: url("assets/Ubuntu-Regular.ttf");
+}
+
 :root {
     --main-color: #E07614;
     --main-hover-color: #572c04;
@@ -15,9 +20,10 @@ Assim, fica mais fácil de organizar e reutilizar códigos */
 * {
     color: white;
     margin: 0;
-    box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-optical-sizing: auto;
+    font-family: "PFont", serif;
     transition: 10ms;
+    box-sizing: border-box;
 }
 
 html {
@@ -140,4 +146,9 @@ input {
 
 .topLeftBorder {
     border-top-left-radius: var(--ui-border);
+}
+
+.gameStart {
+    padding: 16px;
+    width: 15vw;
 }
