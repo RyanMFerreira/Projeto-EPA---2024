@@ -42,7 +42,9 @@
             <button class="tab-link tab" data-tab="jogo1">Snake</button>
             <button class="tab-link tab" data-tab="jogo2">Flappy Bird</button>
             <button class="tab-link tab" data-tab="jogo3">Tetris</button>
-            <button class="tab-link tab" data-tab="jogo4">Jogo 4</button>
+            <button class="tab-link tab" data-tab="jogo4">Dino</button>
+            <button class="tab-link tab" data-tab="jogo5">Breakout</button>
+            <button class="tab-link tab" data-tab="jogo6">Space</button>
         </div>
 
         <div id="jogo1" class="tab-content">
@@ -169,68 +171,149 @@
                     <td class="bottomRightBorder color"></td>
                 </tr>
             </table>
-        </div>
 
-        <div id="jogo4" class="tab-content">
-            <table>
-                <tr>
-                    <th>Posição</th>
-                    <th>Nome</th>
-                    <th class="topRightBorder">Pontuação</th>
-                </tr>
+            <div id="jogo4" class="tab-content">
+                <table>
+                    <tr>
+                        <th>Posição</th>
+                        <th>Nome</th>
+                        <th class="topRightBorder">Pontuação</th>
+                    </tr>
 
-                <?php
-                include_once 'class/QuizScore.php';
+                    <?php
+                    include_once 'class/dino.php';
 
-                $snake = new Quiz();
-                $listar = $snake->listar();
+                    $dino = new Dino();
+                    $listar = $dino->listar();
 
-                if (!empty($listar)) {
-                    $scores = array_column($listar, 'score');
-                    array_multisort($scores, SORT_DESC, $listar);
+                    if (!empty($listar)) {
+                        $scores = array_column($listar, 'score');
+                        array_multisort($scores, SORT_DESC, $listar);
 
-                    $posicao = 1;
+                        $posicao = 1;
 
-                    foreach ($listar as $mostrar) {
-                        $showPosition = "#" . $posicao;
-                        ?>
-                        <tr>
-                            <td scope="row"><?= $showPosition ?></td>
-                            <td><?= $mostrar['name'] ?></td>
-                            <td><?= $mostrar['score'] ?></td>
-                        </tr>
-                        <?php
-                        $posicao++;
+                        foreach ($listar as $mostrar) {
+                            $showPosition = "#" . $posicao;
+                            ?>
+                            <tr>
+                                <td scope="row"><?= $showPosition ?></td>
+                                <td><?= $mostrar['name'] ?></td>
+                                <td><?= $mostrar['score'] ?></td>
+                            </tr>
+                            <?php
+                            $posicao++;
+                        }
                     }
-                }
-                ?>
+                    ?>
 
-                <tr>
-                    <td class="bottomLeftBorder color"></td>
-                    <td class="color"></td>
-                    <td class="bottomRightBorder color"></td>
-                </tr>
-            </table>
-        </div>
-    </div>
+                    <tr>
+                        <td class="bottomLeftBorder color"></td>
+                        <td class="color"></td>
+                        <td class="bottomRightBorder color"></td>
+                    </tr>
+                </table>
 
-    <footer class="footer">
-        <div class="footerInline">
-            <div class="footerDiv">
-                <h4>Membros:</h4>
-                <ul>
-                    <li>Ryan Ferreira</li>
-                    <li>Arthur Martin</li>
-                    <li>Murilo Rossi</li>
-                    <li>Matheus Faria</li>
-                </ul>
-            </div>
-            <div>
-                <h4>Info:</h4>
-                <ul>
-                    <li><a href="#">Sobre</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+                <div id="jogo5" class="tab-content">
+                    <table>
+                        <tr>
+                            <th>Posição</th>
+                            <th>Nome</th>
+                            <th class="topRightBorder">Pontuação</th>
+                        </tr>
+
+                        <?php
+                        include_once 'class/breakout.php';
+
+                        $breakout = new Breakout();
+                        $listar = $breakout->listar();
+
+                        if (!empty($listar)) {
+                            $scores = array_column($listar, 'score');
+                            array_multisort($scores, SORT_DESC, $listar);
+
+                            $posicao = 1;
+
+                            foreach ($listar as $mostrar) {
+                                $showPosition = "#" . $posicao;
+                                ?>
+                                <tr>
+                                    <td scope="row"><?= $showPosition ?></td>
+                                    <td><?= $mostrar['name'] ?></td>
+                                    <td><?= $mostrar['score'] ?></td>
+                                </tr>
+                                <?php
+                                $posicao++;
+                            }
+                        }
+                        ?>
+
+                        <tr>
+                            <td class="bottomLeftBorder color"></td>
+                            <td class="color"></td>
+                            <td class="bottomRightBorder color"></td>
+                        </tr>
+                    </table>
+
+                    <div id="jogo6" class="tab-content">
+                        <table>
+                            <tr>
+                                <th>Posição</th>
+                                <th>Nome</th>
+                                <th class="topRightBorder">Pontuação</th>
+                            </tr>
+
+                            <?php
+                            include_once 'class/space.php';
+
+                            $space = new Space();
+                            $listar = $space->listar();
+
+                            if (!empty($listar)) {
+                                $scores = array_column($listar, 'score');
+                                array_multisort($scores, SORT_DESC, $listar);
+
+                                $posicao = 1;
+
+                                foreach ($listar as $mostrar) {
+                                    $showPosition = "#" . $posicao;
+                                    ?>
+                                    <tr>
+                                        <td scope="row"><?= $showPosition ?></td>
+                                        <td><?= $mostrar['name'] ?></td>
+                                        <td><?= $mostrar['score'] ?></td>
+                                    </tr>
+                                    <?php
+                                    $posicao++;
+                                }
+                            }
+                            ?>
+
+                            <tr>
+                                <td class="bottomLeftBorder color"></td>
+                                <td class="color"></td>
+                                <td class="bottomRightBorder color"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <footer class="footer">
+                    <div class="footerInline">
+                        <div class="footerDiv">
+                            <h4>Membros:</h4>
+                            <ul>
+                                <li>Ryan Ferreira</li>
+                                <li>Arthur Martin</li>
+                                <li>Murilo Rossi</li>
+                                <li>Matheus Faria</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Info:</h4>
+                            <ul>
+                                <li><a href="#">Sobre</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
 </body>
