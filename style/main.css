@@ -24,7 +24,8 @@ a.side {
 button.start {
     width: auto;
     height: 64px;
-    margin-top: 15%;
+    margin-top: 10%;
+    margin-bottom: 2.5%;
     width: 50%;
 }
 
@@ -39,10 +40,13 @@ h1.title {
 div.mainImage {
     margin: auto;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--navbar-hover-color);
+    top: 10%;
     width: 70%;
     height: 70%;
+    border-radius: var(--ui-border);
+}
+
+img {
+    width: 100%;
     border-radius: var(--ui-border);
 }

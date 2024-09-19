@@ -34,15 +34,15 @@
     </ul>
 
     <div class="main">
-        <div class="content">
-            <h1 class="title">Projeto EPA - 2024</h1>
-            <a href="catalog.php"><button class="start">Começar a jogar!</button></a>
-        </div>
-
-        <div class="side">
-            <div class="mainImage"></div>
-        </div>
+    <div class="content">
+        <h1 class="title">Projeto EPA - 2024</h1>
+        <a href="catalog.php"><button class="start">Começar a jogar!</button></a><br>
+        <p>Explore mini-jogos, acompanhe seu placar <br>e divirta-se em nosso Projeto!</p>
     </div>
+    <div class="side">
+        <div class="mainImage"><img src="assets/main.png" alt="Imagem Principal"></div>
+    </div>
+</div>
 
     <footer class="footer">
         <div class="footerInline">
