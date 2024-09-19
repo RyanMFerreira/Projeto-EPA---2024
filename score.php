@@ -69,13 +69,13 @@
 
                     foreach ($listar as $mostrar) {
                         $showPosition = "#" . $posicao;
-                        ?>
+                ?>
                         <tr>
                             <td scope="row"><?= $showPosition ?></td>
                             <td><?= $mostrar['name'] ?></td>
                             <td><?= $mostrar['score'] ?></td>
                         </tr>
-                        <?php
+                <?php
                         $posicao++;
                     }
                 }
@@ -111,13 +111,13 @@
 
                     foreach ($listar as $mostrar) {
                         $showPosition = "#" . $posicao;
-                        ?>
+                ?>
                         <tr>
                             <td scope="row"><?= $showPosition ?></td>
                             <td><?= $mostrar['name'] ?></td>
                             <td><?= $mostrar['score'] ?></td>
                         </tr>
-                        <?php
+                <?php
                         $posicao++;
                     }
                 }
@@ -153,13 +153,13 @@
 
                     foreach ($listar as $mostrar) {
                         $showPosition = "#" . $posicao;
-                        ?>
+                ?>
                         <tr>
                             <td scope="row"><?= $showPosition ?></td>
                             <td><?= $mostrar['name'] ?></td>
                             <td><?= $mostrar['score'] ?></td>
                         </tr>
-                        <?php
+                <?php
                         $posicao++;
                     }
                 }
@@ -171,149 +171,152 @@
                     <td class="bottomRightBorder color"></td>
                 </tr>
             </table>
+        </div>
 
-            <div id="jogo4" class="tab-content">
-                <table>
-                    <tr>
-                        <th>Posição</th>
-                        <th>Nome</th>
-                        <th class="topRightBorder">Pontuação</th>
-                    </tr>
+        <div id="jogo4" class="tab-content">
+            <table>
+                <tr>
+                    <th>Posição</th>
+                    <th>Nome</th>
+                    <th class="topRightBorder">Pontuação</th>
+                </tr>
 
-                    <?php
-                    include_once 'class/dino.php';
+                <?php
+                include_once 'class/dinoScore.php';
 
-                    $dino = new Dino();
-                    $listar = $dino->listar();
+                $dino = new Dino();
+                $listar = $dino->listar();
 
-                    if (!empty($listar)) {
-                        $scores = array_column($listar, 'score');
-                        array_multisort($scores, SORT_DESC, $listar);
+                if (!empty($listar)) {
+                    $scores = array_column($listar, 'score');
+                    array_multisort($scores, SORT_DESC, $listar);
 
-                        $posicao = 1;
+                    $posicao = 1;
 
-                        foreach ($listar as $mostrar) {
-                            $showPosition = "#" . $posicao;
-                            ?>
-                            <tr>
-                                <td scope="row"><?= $showPosition ?></td>
-                                <td><?= $mostrar['name'] ?></td>
-                                <td><?= $mostrar['score'] ?></td>
-                            </tr>
-                            <?php
-                            $posicao++;
-                        }
+                    foreach ($listar as $mostrar) {
+                        $showPosition = "#" . $posicao;
+                ?>
+                        <tr>
+                            <td scope="row"><?= $showPosition ?></td>
+                            <td><?= $mostrar['name'] ?></td>
+                            <td><?= $mostrar['score'] ?></td>
+                        </tr>
+                <?php
+                        $posicao++;
                     }
-                    ?>
+                }
+                ?>
 
-                    <tr>
-                        <td class="bottomLeftBorder color"></td>
-                        <td class="color"></td>
-                        <td class="bottomRightBorder color"></td>
-                    </tr>
-                </table>
+                <tr>
+                    <td class="bottomLeftBorder color"></td>
+                    <td class="color"></td>
+                    <td class="bottomRightBorder color"></td>
+                </tr>
+            </table>
+        </div>
 
-                <div id="jogo5" class="tab-content">
-                    <table>
+        <div id="jogo5" class="tab-content">
+        <table>
+                <tr>
+                    <th id="pos">Posição</th>
+                    <th>Nome</th>
+                    <th class="topRightBorder">Pontuação</th>
+                </tr>
+
+                <?php
+                include_once 'class/breakoutScore.php';
+
+                $breakout = new Breakout();
+                $listar = $breakout->listar();
+
+                if (!empty($listar)) {
+                    $scores = array_column($listar, 'score');
+                    array_multisort($scores, SORT_DESC, $listar);
+
+                    $posicao = 1;
+
+                    foreach ($listar as $mostrar) {
+                        $showPosition = "#" . $posicao;
+                ?>
                         <tr>
-                            <th>Posição</th>
-                            <th>Nome</th>
-                            <th class="topRightBorder">Pontuação</th>
+                            <td scope="row"><?= $showPosition ?></td>
+                            <td><?= $mostrar['name'] ?></td>
+                            <td><?= $mostrar['score'] ?></td>
                         </tr>
+                <?php
+                        $posicao++;
+                    }
+                }
+                ?>
 
-                        <?php
-                        include_once 'class/breakout.php';
+                <tr>
+                    <td class="bottomLeftBorder color"></td>
+                    <td class="color"></td>
+                    <td class="bottomRightBorder color"></td>
+                </tr>
+            </table>
+        </div>
 
-                        $breakout = new Breakout();
-                        $listar = $breakout->listar();
+        <div id="jogo6" class="tab-content">
+            <table>
+                <tr>
+                    <th>Posição</th>
+                    <th>Nome</th>
+                    <th class="topRightBorder">Pontuação</th>
+                </tr>
 
-                        if (!empty($listar)) {
-                            $scores = array_column($listar, 'score');
-                            array_multisort($scores, SORT_DESC, $listar);
+                <?php
+                include_once 'class/spaceScore.php';
 
-                            $posicao = 1;
+                $space = new Space();
+                $listar = $space->listar();
 
-                            foreach ($listar as $mostrar) {
-                                $showPosition = "#" . $posicao;
-                                ?>
-                                <tr>
-                                    <td scope="row"><?= $showPosition ?></td>
-                                    <td><?= $mostrar['name'] ?></td>
-                                    <td><?= $mostrar['score'] ?></td>
-                                </tr>
-                                <?php
-                                $posicao++;
-                            }
-                        }
-                        ?>
+                if (!empty($listar)) {
+                    $scores = array_column($listar, 'score');
+                    array_multisort($scores, SORT_DESC, $listar);
 
+                    $posicao = 1;
+
+                    foreach ($listar as $mostrar) {
+                        $showPosition = "#" . $posicao;
+                ?>
                         <tr>
-                            <td class="bottomLeftBorder color"></td>
-                            <td class="color"></td>
-                            <td class="bottomRightBorder color"></td>
+                            <td scope="row"><?= $showPosition ?></td>
+                            <td><?= $mostrar['name'] ?></td>
+                            <td><?= $mostrar['score'] ?></td>
                         </tr>
-                    </table>
+                <?php
+                        $posicao++;
+                    }
+                }
+                ?>
 
-                    <div id="jogo6" class="tab-content">
-                        <table>
-                            <tr>
-                                <th>Posição</th>
-                                <th>Nome</th>
-                                <th class="topRightBorder">Pontuação</th>
-                            </tr>
+                <tr>
+                    <td class="bottomLeftBorder color"></td>
+                    <td class="color"></td>
+                    <td class="bottomRightBorder color"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
-                            <?php
-                            include_once 'class/space.php';
-
-                            $space = new Space();
-                            $listar = $space->listar();
-
-                            if (!empty($listar)) {
-                                $scores = array_column($listar, 'score');
-                                array_multisort($scores, SORT_DESC, $listar);
-
-                                $posicao = 1;
-
-                                foreach ($listar as $mostrar) {
-                                    $showPosition = "#" . $posicao;
-                                    ?>
-                                    <tr>
-                                        <td scope="row"><?= $showPosition ?></td>
-                                        <td><?= $mostrar['name'] ?></td>
-                                        <td><?= $mostrar['score'] ?></td>
-                                    </tr>
-                                    <?php
-                                    $posicao++;
-                                }
-                            }
-                            ?>
-
-                            <tr>
-                                <td class="bottomLeftBorder color"></td>
-                                <td class="color"></td>
-                                <td class="bottomRightBorder color"></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-
-                <footer class="footer">
-                    <div class="footerInline">
-                        <div class="footerDiv">
-                            <h4>Membros:</h4>
-                            <ul>
-                                <li>Ryan Ferreira</li>
-                                <li>Arthur Martin</li>
-                                <li>Murilo Rossi</li>
-                                <li>Matheus Faria</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Info:</h4>
-                            <ul>
-                                <li><a href="#">Sobre</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </footer>
+    <footer class="footer">
+        <div class="footerInline">
+            <div class="footerDiv">
+                <h4>Membros:</h4>
+                <ul>
+                    <li>Ryan Ferreira</li>
+                    <li>Arthur Martin</li>
+                    <li>Murilo Rossi</li>
+                    <li>Matheus Faria</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Info:</h4>
+                <ul>
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
