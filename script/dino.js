@@ -33,14 +33,22 @@ let cactus1Img;
 let cactus2Img;
 let cactus3Img;
 
-let velocityX = -8;
+let velocityXDefault = -8;
+
+let velocityX = velocityXDefault;
 let velocityY = 0;
 let gravity = .4;
 
 let gameOver = false;
 let score = 0;
 
-window.onload = function () {
+function gameStart() {
+    score = 0;
+    velocityX = velocityXDefault;
+
+    document.getElementById('gameContent').style.display = 'block';
+    document.getElementById('start_game').style.display = 'none';
+
     board = document.getElementById("board");
     board.height = boardHeight;
     board.width = boardWidth;
@@ -68,50 +76,50 @@ window.onload = function () {
 }
 
 function update() {
-    requestAnimationFrame(update);
+    if (!gameOver) {
+        requestAnimationFrame(update);
 
-    if (gameOver) {
-        console.log(gameOver);
-        console.log();
-        return;
-    }
-    context.clearRect(0, 0, board.width, board.height);
+        context.clearRect(0, 0, board.width, board.height);
 
-    velocityY += gravity;
-    dino.y = Math.min(dino.y + velocityY, dinoY);
+        velocityY += gravity;
+        dino.y = Math.min(dino.y + velocityY, dinoY);
 
-    //context.fillStyle = "red";
-    //context.fillRect(dino.x, dino.y, dino.width, dino.height);
+        //Backup
+        //context.fillStyle = "red";
+        //context.fillRect(dino.x, dino.y, dino.width, dino.height);
 
-    context.drawImage(dinoImg, dino.x - hitBoxAdjust_xPosition, dino.y, dino.width + hitBoxAdjust_xSize, dino.height);
+        context.drawImage(dinoImg, dino.x - hitBoxAdjust_xPosition, dino.y, dino.width + hitBoxAdjust_xSize, dino.height);
 
-    for (let i = 0; i < cactusArray.length; i++) {
-        let cactus = cactusArray[i];
-        cactus.x += velocityX;
-        context.drawImage(cactus.img, cactus.x, cactus.y, cactus.width, cactus.height);
+        for (let i = 0; i < cactusArray.length; i++) {
+            let cactus = cactusArray[i];
+            cactus.x += velocityX;
+            context.drawImage(cactus.img, cactus.x, cactus.y, cactus.width, cactus.height);
 
-        if (detectCollision(dino, cactus)) {
-            gameOver = true;
-            dinoImg.src = "../assets/dinoAssets/dino-dead.png";
-            dinoImg.onload = function () {
-                context.drawImage(dinoImg, dino.x - hitBoxAdjust_xPosition, dino.y, dino.width + hitBoxAdjust_xSize, dino.height);
+            if (detectCollision(dino, cactus)) {
+                gameOver = true;
+                dinoImg.src = "../assets/dinoAssets/dino-dead.png";
+                dinoImg.onload = function () {
+                    context.drawImage(dinoImg, dino.x - hitBoxAdjust_xPosition, dino.y, dino.width + hitBoxAdjust_xSize, dino.height);
+                }
             }
         }
+
+        score += 0.25;
+
+        // Exibir a pontuação
+        document.getElementById('score').textContent = "Pontuação: " + score;
+
+        // Mandar pontuação para o input que será usado no PHP
+        document.getElementById('scoreInput').value = score;
+
+        if (score % 100 === 0) {
+            velocityX *= 1.05;
+        }
+        console.log("Velocidade X: ", velocityX, ". Pontuação: ", score);
     }
-
-    score += 0.25;
-
-    // Exibir a pontuação
-    document.getElementById('score').textContent = "Pontuação: " + score;
-
-    // Mandar pontuação para o input que será usado no PHP
-    var input = document.getElementById('scoreInput');
-    input.value = score;
-
-    if (score % 100 === 0){
-        velocityX *= 1.05;
+    else {
+        gameOverFunction();
     }
-    console.log(velocityX);
 }
 
 function moveDino(event) {
@@ -160,4 +168,18 @@ function detectCollision(a, b) {
         a.x + a.width > b.x &&
         a.y < b.y + b.height &&
         a.y + a.height > b.y;
+}
+
+function gameOverFunction() {
+    openPopUp();
+}
+
+function openPopUp() {
+    document.getElementById("myModal").style.display = "block";
+}
+
+function closePopUp() {
+    document.getElementById("myModal").style.display = "none";
+    gameOver = false;
+    gameStart();
 }

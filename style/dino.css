@@ -1,4 +1,10 @@
-#board{
+#board {
     background-color: lightgray;
-    border-bottom: 1px solid black;
+    border-bottom: 4px solid #535353;
+    border-radius: var(--ui-border);
+}
+
+#gameContent {
+    margin: auto;
+    display: none;
 }

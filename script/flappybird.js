@@ -1,6 +1,6 @@
 //board
 let board;
-let boardWidth = 1024; 
+let boardWidth = 1024;
 let boardHeight = 640;
 let context;
 
@@ -20,7 +20,7 @@ let bird = {
 
 //canos
 let pipeArray = [];
-let pipeWidth = 64; 
+let pipeWidth = 64;
 let pipeHeight = 512;
 let pipeX = boardWidth;
 let pipeY = 0;
@@ -42,11 +42,9 @@ function startGame() {
     board.width = boardWidth;
     context = board.getContext("2d");
 
-    var startGame = document.getElementById('start_game');
-    startGame.style.display = 'none';
+    document.getElementById('start_game').style.display = 'none';
 
-    var gameBoard = document.getElementById('board');
-    gameBoard.style.display = 'block';
+    document.getElementById('board').style.display = 'block';
 
     //carrega images
     birdImg = new Image();
@@ -72,7 +70,7 @@ function update() {
         requestAnimationFrame(update);
         context.clearRect(0, 0, board.width, board.height);
         velocityY += gravity;
-                bird.y = Math.max(bird.y + velocityY, 0);
+        bird.y = Math.max(bird.y + velocityY, 0);
         context.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
 
         if (bird.y > board.height) {
@@ -161,23 +159,20 @@ function moveBird(e) {
 
 //colisão
 function detectCollision(a, b) {
-    return a.x < b.x + b.width &&  
-        a.x + a.width > b.x &&  
-        a.y < b.y + b.height &&  
+    return a.x < b.x + b.width &&
+        a.x + a.width > b.x &&
+        a.y < b.y + b.height &&
         a.y + a.height > b.y;
 }
 
 function openPopUp() {
-    var popUp = document.getElementById("gameOverPopUp");
-    popUp.style.display = "block";
+    document.getElementById("gameOverPopUp").style.display = "block";
 }
 
 function closePopUp() {
-    var popUp = document.getElementById("gameOverPopUp");
-    popUp.style.display = "none";
+    document.getElementById("gameOverPopUp").style.display = "none";
 }
 
 function updateScore() {
-    var input = document.getElementById('scoreInput');
-    input.value = score;
+    document.getElementById('scoreInput').value = score;
 }

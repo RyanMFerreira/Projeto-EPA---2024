@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake</title>
+    <title>Dino</title>
 
     <link rel="stylesheet" href="../style/gameOverPopUp.css">
     <link rel="stylesheet" href="../style/catalog.css">
@@ -37,13 +37,13 @@
     </ul>
 
     <a class="backA" href="../catalog.php">Voltar ao catálogo</a>
-    <div class="main" id="game_container">
-        <div class="center">
+    <div class="main">
+        <div id="gameContent">
             <h2 name="score" id="score">Pontuação:</h2>
             <canvas id="board"></canvas>
         </div>
         <div id="game_controls">
-            <button class="gameStart" onclick="start()" id="start_game">Iniciar Jogo</button>
+            <button class="gameStart" onclick="gameStart()" id="start_game">Iniciar Jogo</button>
         </div>
 
         <div id="myModal" class="popUp">
@@ -63,7 +63,6 @@
                 </div>
             </div>
         </div>
-
 
     </div>
     <div class="main">
