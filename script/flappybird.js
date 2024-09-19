@@ -29,9 +29,9 @@ let topPipeImg;
 let bottomPipeImg;
 
 //fisicas
-let velocityX = -2; //velocidade dos canos movendo para a esquerda
+let velocityX = -8; //velocidade dos canos movendo para a esquerda
 let velocityY = 0;
-let gravity = 0.15; //gravidade dificil de balancear
+let gravity = 0.25; //gravidade dificil de balancear
 
 let gameOver = false;
 var score = 0;
@@ -63,7 +63,7 @@ function startGame() {
 
     //velocidade de aparecimento dos canos 
     requestAnimationFrame(update);
-    setInterval(placePipes, 1500); //gera um cano a cada 1.5 segundos
+    setInterval(placePipes, 1000); //gera um cano a cada 1.5 segundos
     document.addEventListener("keydown", moveBird);
 }
 
@@ -118,8 +118,8 @@ function update() {
 function placePipes() {
 
     //variaveis para modificar o espaçamento dos canos 
-    let randomPipeY = pipeY - pipeHeight / 3 - Math.random() * (pipeHeight / 2);
-    let openingSpace = board.height / 2;
+    let randomPipeY = pipeY - pipeHeight / 2 - Math.random() * (pipeHeight / 2);
+    let openingSpace = board.height / 4;
 
     let topPipe = {
         img: topPipeImg,

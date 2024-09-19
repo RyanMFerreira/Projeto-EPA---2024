@@ -110,11 +110,11 @@ if (filter_input(type: INPUT_POST, var_name: 'restart_game')) {
     );
 
     include_once '../class/BreakoutScore.php';
-    $bird = new FlappyBird();
+    $breakout = new Breakout();
 
-    $bird->setJsonDados(jsonDados: json_encode(value: $dados));
+    $breakout->setJsonDados(jsonDados: json_encode(value: $dados));
 
-    $msg = $bird->salvar() === true ? "Erro ao salvar!" : "Dados salvos! :)";
+    $msg = $breakout->salvar() === true ? "Erro ao salvar!" : "Dados salvos! :)";
 
     echo "<script type='text/javascript'>alert('$msg');</script>";
 }
