@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" , content="width=device-width, initial-scale=1.0">
-    <title>Breakout</title>
+    <title>Space invaders</title>
 
     <link rel="stylesheet" href="../style/catalog.css">
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="../style/navBar.css">
     <link rel="stylesheet" href="../style/sideMenu.css">
     <link rel="stylesheet" href="../style/gameOverPopUp.css">
-    <link rel="stylesheet" href="../style/breakout.css">
+    <link rel="stylesheet" href="../style/space.css">
 
     <script src="../script.js"></script>
 
     <script src="../script/menuScript.js"></script>
-    <script src="../script/breakout.js"></script>
+    <script src="../script/space.js"></script>
 </head>
 
 <body>
@@ -45,7 +45,7 @@
             <button onclick="startgame()" id="start_game">Iniciar Jogo</button>
         </div>
 
-        <div id="gameOverPopUp" class="popUp">
+        <div id="myModal" class="popUp">
             <div class="popUp-content">
                 <div class="popUp-header">
                     <h2>Game Over!</h2>
@@ -66,7 +66,7 @@
         <div class="tLeft">
             <h3>Como jogar?</h3>
             <ul>
-                <li>Utilize a seta para direita e esquerda para se mover.</li>
+                <li>Utilize a setas para se mover e spaço para atirar.</li>
             </ul>
         </div>
         <div class="tRight">
@@ -109,12 +109,12 @@ if (filter_input(type: INPUT_POST, var_name: 'restart_game')) {
         'score' => $pontucacao
     );
 
-    include_once '../class/BreakoutScore.php';
-    $breakout = new Breakout();
+    include_once '../class/spaceScore.php';
+    $space = new space();
 
-    $breakout->setJsonDados(jsonDados: json_encode(value: $dados));
+    $space->setJsonDados(jsonDados: json_encode(value: $dados));
 
-    $msg = $breakout->salvar() === true ? "Erro ao salvar!" : "Dados salvos! :)";
+    $msg = $space->salvar() === true ? "Erro ao salvar!" : "Dados salvos! :)";
 
     echo "<script type='text/javascript'>alert('$msg');</script>";
 }
