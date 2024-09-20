@@ -66,7 +66,7 @@
         <div class="tLeft">
             <h3>Como jogar?</h3>
             <ul>
-                <li>Utilize a setas para se mover e spaço para atirar.</li>
+                <li>Utilize a setas da direita e esquerda para se mover e spaço para atirar.</li>
             </ul>
         </div>
         <div class="tRight">
