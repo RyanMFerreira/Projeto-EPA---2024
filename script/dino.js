@@ -106,6 +106,7 @@ function update() {
 
         score += 0.25;
 
+        // Deixando claor.
         // Exibir a pontuação
         document.getElementById('score').textContent = "Pontuação: " + score;
 
@@ -126,9 +127,6 @@ function moveDino(event) {
     if ((event.code == "Space" || event.code == "ArrowUp") && dino.y == dinoY) {
         velocityY = -10;
     }
-    else if (event.code == "ArrowDown" && dino.y == dinoY) {
-        // Não vai dar tempo de fazer o resto 
-    }
 }
 
 function placeCactus() {
@@ -142,17 +140,17 @@ function placeCactus() {
 
     let placeCactusChance = Math.random();
 
-    if (placeCactusChance > .50) {
+    if (placeCactusChance > 0.50) {
         cactus.img = cactus3Img;
         cactus.width = cactus3Width;
         cactusArray.push(cactus);
     }
-    else if (placeCactusChance > .25) {
+    else if (placeCactusChance > 0.25) {
         cactus.img = cactus2Img;
         cactus.width = cactus2Width;
         cactusArray.push(cactus);
     }
-    else if (placeCactusChance > .10) {
+    else if (placeCactusChance > 0.10) {
         cactus.img = cactus1Img;
         cactus.width = cactus1Width;
         cactusArray.push(cactus);
@@ -164,11 +162,21 @@ function placeCactus() {
 }
 
 function detectCollision(a, b) {
-    return a.x < b.x + b.width &&
-        a.x + a.width > b.x &&
-        a.y < b.y + b.height &&
-        a.y + a.height > b.y;
+    let isColliding = false;
+
+    if (a.x < b.x + b.width) {
+        if (a.x + a.width > b.x) {
+            if (a.y < b.y + b.height) {
+                if (a.y + a.height > b.y) {
+                    isColliding = true;
+                }
+            }
+        }
+    }
+
+    return isColliding;
 }
+
 
 function gameOverFunction() {
     openPopUp();
