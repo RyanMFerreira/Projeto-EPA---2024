@@ -1,0 +1,9 @@
+canvas {
+    border: 2px solid #ecf0f1;
+    background-color: #34495e;
+    margin-top: 20px;
+}
+
+#center{
+    display: none;
+}

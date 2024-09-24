@@ -82,7 +82,7 @@
                 </a>
             </div>            
             <div class="card">
-                <a href="games/space.php">
+                <a href="games/space/space.php">
                     <div class="temp" style="background-image: url(assets/catalogAssets/space.png); background-size: 256px;"></div>
                     <div class="container">
                         <h4><b>Space</b></h4>
